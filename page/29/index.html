@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>记录 总结 思考 成长</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="记录 总结 思考 成长">
+<meta property="og:url" content="http://longxianghome.com/page/29/index.html">
+<meta property="og:site_name" content="记录 总结 思考 成长">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记录 总结 思考 成长">
+  
+    <link rel="alternate" href="/atom.xml" title="记录 总结 思考 成长" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">记录 总结 思考 成长</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Java Web 开发</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://longxianghome.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-20151216-Thread 同步不可继承" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/16/20151216-Thread 同步不可继承/" class="article-date">
+  <time datetime="2015-12-16T14:16:00.000Z" itemprop="datePublished">2015-12-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-Thread/">Java Thread</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/16/20151216-Thread 同步不可继承/">Thread 同步不可继承</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在前文中提到，锁重入是支持继承的，但是同步其实不可以继承的</p>
+<p>父类的方法是同步的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class MyObject &#123;</span><br><span class="line"></span><br><span class="line">	public synchronized void methodA() &#123;</span><br><span class="line">		System.out.println(&quot;begin methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">		try &#123;</span><br><span class="line">			Thread.sleep(2000);</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;end methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>但是子类重写方法时去掉了 synchronized 关键字：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class MyObjectSon extends MyObject&#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void methodA() &#123;</span><br><span class="line">		System.out.println(&quot;begin methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">		try &#123;</span><br><span class="line">			Thread.sleep(2000);</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;end methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>线程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadA extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private MyObject myObject;</span><br><span class="line"></span><br><span class="line">	public ThreadA(MyObject myObject) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.myObject = myObject;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		super.run();</span><br><span class="line">		myObject.methodA();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class ThreadB extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private MyObject myObject;</span><br><span class="line"></span><br><span class="line">	public ThreadB(MyObject myObject) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.myObject = myObject;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		super.run();</span><br><span class="line">		myObject.methodA();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>ThreadRunner:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadRunner &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		MyObjectSon myObjectSon = new MyObjectSon();</span><br><span class="line">		ThreadA threadA = new ThreadA(myObjectSon);</span><br><span class="line">		threadA.setName(&quot;A&quot;);</span><br><span class="line">		ThreadB threadB = new ThreadB(myObjectSon);</span><br><span class="line">		threadB.setName(&quot;B&quot;);</span><br><span class="line">		threadA.start();</span><br><span class="line">		threadB.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>控制台：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">begin methodA threadName=A</span><br><span class="line">begin methodA threadName=B</span><br><span class="line">end methodA threadName=A</span><br><span class="line">end methodA threadName=B</span><br></pre></td></tr></table></figure></p>
+<p>子类的方法经过重写，已经不具备同步了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://longxianghome.com/2015/12/16/20151216-Thread 同步不可继承/" data-id="cjl3o0k6e002xtr6bpiksmp4y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-Thread/">Java Thread</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20151215-Thread 对象锁重入" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/15/20151215-Thread 对象锁重入/" class="article-date">
+  <time datetime="2015-12-15T12:38:00.000Z" itemprop="datePublished">2015-12-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-Thread/">Java Thread</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/15/20151215-Thread 对象锁重入/">Thread 对象锁重入</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在 Thread 锁对象示例中提到 获取到锁，即获取了该对象同步的独占权，那么就带了一个锁重入现象：</p>
+<p>当一个线程得到某个对象的锁，再次请求次对象锁时是可以再次获取对象的锁</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class MyObject &#123;</span><br><span class="line"></span><br><span class="line">	public synchronized void methodA() &#123;</span><br><span class="line">		System.out.println(&quot;begin methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">		try &#123;</span><br><span class="line">			Thread.sleep(2000);</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;end methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">		methodB();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public synchronized void methodB() &#123;</span><br><span class="line">		System.out.println(&quot;begin methodB threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">		try &#123;</span><br><span class="line">			Thread.sleep(2000);</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;end methodB threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们在同步方法 methodA 中调用同步方法 methodB</p>
+<p>线程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadA extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private MyObject myObject;</span><br><span class="line"></span><br><span class="line">	public ThreadA(MyObject myObject) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.myObject = myObject;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		super.run();</span><br><span class="line">		myObject.methodA();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>ThreadRunner：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadRunner &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		MyObject myObject = new MyObject();</span><br><span class="line">		ThreadA threadA = new ThreadA(myObject);</span><br><span class="line">		threadA.setName(&quot;A&quot;);</span><br><span class="line">		threadA.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>控制台：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">begin methodA threadName=A</span><br><span class="line">end methodA threadName=A</span><br><span class="line">begin methodB threadName=A</span><br><span class="line">end methodB threadName=A</span><br></pre></td></tr></table></figure></p>
+<p>锁重入其实很好理解，就是像拿到一把门的钥匙以后，想进去几次都没有关系，毕竟拥有独占权。</p>
+<p>锁重入机制也支持继承，子类继承了父类，就拥有了父类的一切，其实也是等于自己的</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://longxianghome.com/2015/12/15/20151215-Thread 对象锁重入/" data-id="cjl3o0k6a002ptr6bn7s6ld7d" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-Thread/">Java Thread</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20151214-Thread 锁对象示例" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/14/20151214-Thread 锁对象示例/" class="article-date">
+  <time datetime="2015-12-14T15:10:00.000Z" itemprop="datePublished">2015-12-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-Thread/">Java Thread</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/14/20151214-Thread 锁对象示例/">Thread 锁对象示例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>公共对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class MyObject &#123;</span><br><span class="line"></span><br><span class="line">	public void methodA() &#123;</span><br><span class="line">		System.out.println(&quot;begin methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">		try &#123;</span><br><span class="line">			Thread.sleep(2000);</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;end methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>线程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadA extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private MyObject myObject;</span><br><span class="line"></span><br><span class="line">	public ThreadA(MyObject myObject) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.myObject = myObject;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		super.run();</span><br><span class="line">		myObject.methodA();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class ThreadB extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private MyObject myObject;</span><br><span class="line"></span><br><span class="line">	public ThreadB(MyObject myObject) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.myObject = myObject;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		super.run();</span><br><span class="line">		myObject.methodA();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>两个线程都调用同一个非同步方法</p>
+<p>ThreadRunner：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadRunner &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		MyObject myObject = new MyObject();</span><br><span class="line">		ThreadA threadA = new ThreadA(myObject);</span><br><span class="line">		ThreadB threadB = new ThreadB(myObject);</span><br><span class="line">		threadA.setName(&quot;A&quot;);</span><br><span class="line">		threadB.setName(&quot;B&quot;);</span><br><span class="line">		threadA.start();</span><br><span class="line">		threadB.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>控制台打印：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">begin methodA threadName=A</span><br><span class="line">begin methodA threadName=B</span><br><span class="line">end methodA threadName=B</span><br><span class="line">end methodA threadName=A</span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">begin methodA threadName=A</span><br><span class="line">begin methodA threadName=B</span><br><span class="line">end methodA threadName=A</span><br><span class="line">end methodA threadName=B</span><br></pre></td></tr></table></figure>
+<p>因为方法是不同步，两个线程都可以进入方法</p>
+<p>如果方法是同步的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class MyObject &#123;</span><br><span class="line"></span><br><span class="line">	public synchronized void methodA() &#123;</span><br><span class="line">		System.out.println(&quot;begin methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">		try &#123;</span><br><span class="line">			Thread.sleep(2000);</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;end methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>控制台打印：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">begin methodA threadName=A</span><br><span class="line">end methodA threadName=A</span><br><span class="line">begin methodbA hreadName=B</span><br><span class="line">end methodA threadName=B</span><br></pre></td></tr></table></figure></p>
+<p>发现两个线程将顺序的调用同步的方法，一个线程退出了同步方法， 另一个线程才可以进入同步方法</p>
+<p>如果一个线程调用同步方法，一个线程调用非同步方法会是什么样的情形？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public class MyObject &#123;</span><br><span class="line"></span><br><span class="line">	public synchronized void methodA() &#123;</span><br><span class="line">		System.out.println(&quot;begin methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">		try &#123;</span><br><span class="line">			Thread.sleep(2000);</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;end methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void methodB() &#123;</span><br><span class="line">		System.out.println(&quot;begin methodB threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">		try &#123;</span><br><span class="line">			Thread.sleep(2000);</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;end methodB threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>修改线程 B，让其调用非同步方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadB extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private MyObject myObject;</span><br><span class="line"></span><br><span class="line">	public ThreadB(MyObject myObject) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.myObject = myObject;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		super.run();</span><br><span class="line">		myObject.methodB();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>控制台打印：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">begin methodA threadName=A</span><br><span class="line">begin methodA threadName=B</span><br><span class="line">end methodB threadName=A</span><br><span class="line">end methodB threadName=B</span><br></pre></td></tr></table></figure></p>
+<p>发现两个线程可以分别调用各自需要调用的方法</p>
+<p>继续修改，如果两个线程各自调用一个同步的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public class MyObject &#123;</span><br><span class="line"></span><br><span class="line">	public synchronized void methodA() &#123;</span><br><span class="line">		System.out.println(&quot;begin methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">		try &#123;</span><br><span class="line">			Thread.sleep(2000);</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;end methodA threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public synchronized void methodB() &#123;</span><br><span class="line">		System.out.println(&quot;begin methodB threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">		try &#123;</span><br><span class="line">			Thread.sleep(2000);</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;end methodB threadName=&quot; + Thread.currentThread().getName());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过控制台日志：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">begin methodA threadName=A</span><br><span class="line">end methodA threadName=A</span><br><span class="line">begin methodB threadName=B</span><br><span class="line">end methodB threadName=B</span><br></pre></td></tr></table></figure></p>
+<p>发现两个线程又只能顺序执行了。</p>
+<p>通过上述示例，可以返现，同步其实使用的是对象锁。</p>
+<p><strong>当 线程 A 调用了 某个公共对象的同步方法时，线程 A 就获取了这个对象的锁，如果其他线程也需要调用该对象的同步方法，只能等待线程 A 退出，但是可以调用该对象的非同步方法</strong></p>
+<p>获取到锁，即获取了该对象同步的独占权</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://longxianghome.com/2015/12/14/20151214-Thread 锁对象示例/" data-id="cjl3o0k6c002utr6b2aqzyf4x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-Thread/">Java Thread</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20151213-Thread 同步问题示例" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/13/20151213-Thread 同步问题示例/" class="article-date">
+  <time datetime="2015-12-13T13:26:00.000Z" itemprop="datePublished">2015-12-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-Thread/">Java Thread</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/13/20151213-Thread 同步问题示例/">Thread 同步问题示例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在 Thread 线程安全问题 博文中已经阐述了，线程安全问题的原因以及使用 synchronized 关键字保证线程安全的方法，本文再讲述一种利用锁对象的方式保证线程安全。</p>
+<p><strong>方法内变量不存在同步问题示例</strong></p>
+<p>公共类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class MethodPrivateVariable &#123;</span><br><span class="line"></span><br><span class="line">	public void add(String name) &#123;</span><br><span class="line"></span><br><span class="line">		int count = 0;</span><br><span class="line"></span><br><span class="line">		if (&quot;a&quot;.equals(name)) &#123;</span><br><span class="line">			count = 10;</span><br><span class="line">			System.out.println(name + &quot; set end , count :&quot; + count);</span><br><span class="line">			try &#123;</span><br><span class="line">				Thread.sleep(1000);</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		if (&quot;b&quot;.equals(name)) &#123;</span><br><span class="line">			count = 20;</span><br><span class="line">			System.out.println(name + &quot; set end , count :&quot; + count);</span><br><span class="line">			try &#123;</span><br><span class="line">				Thread.sleep(1000);</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>线程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadA extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private MethodPrivateVariable methodPrivateVariable;</span><br><span class="line"></span><br><span class="line">	public ThreadA(MethodPrivateVariable methodPrivateVariable) &#123;</span><br><span class="line">		this.methodPrivateVariable = methodPrivateVariable;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		super.run();</span><br><span class="line">		methodPrivateVariable.add(&quot;a&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class ThreadB extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private MethodPrivateVariable methodPrivateVariable;</span><br><span class="line"></span><br><span class="line">	public ThreadB(MethodPrivateVariable methodPrivateVariable) &#123;</span><br><span class="line">		this.methodPrivateVariable = methodPrivateVariable;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		super.run();</span><br><span class="line">		methodPrivateVariable.add(&quot;b&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>ThreadRunner：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class ThreandRunner &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		MethodPrivateVariable methodPrivateVariable = new MethodPrivateVariable();</span><br><span class="line">		ThreadA a = new ThreadA(methodPrivateVariable);</span><br><span class="line">		ThreadB b = new ThreadB(methodPrivateVariable);</span><br><span class="line">		a.start();</span><br><span class="line">		b.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>无论运行多少次，控制台都将打印：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a set end , count :10</span><br><span class="line">b set end , count :20</span><br></pre></td></tr></table></figure>
+<p><strong>类实例变量存在同步问题示例</strong></p>
+<p>公共类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class ClassVariable &#123;</span><br><span class="line"></span><br><span class="line">	private int count = 0;</span><br><span class="line"></span><br><span class="line">	public void add(String name) &#123;</span><br><span class="line"></span><br><span class="line">		if (&quot;c&quot;.equals(name)) &#123;</span><br><span class="line">			count = 10;</span><br><span class="line">			System.out.println(name + &quot; set end , count :&quot; + count);</span><br><span class="line">			try &#123;</span><br><span class="line">				Thread.sleep(1000);</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		if (&quot;d&quot;.equals(name)) &#123;</span><br><span class="line">			count = 20;</span><br><span class="line">			System.out.println(name + &quot; set end , count :&quot; + count);</span><br><span class="line">			try &#123;</span><br><span class="line">				Thread.sleep(1000);</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>线程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadC extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private ClassVariable classVariable;</span><br><span class="line"></span><br><span class="line">	public ThreadC(ClassVariable classVariable) &#123;</span><br><span class="line">		this.classVariable = classVariable;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		super.run();</span><br><span class="line">		classVariable.add(&quot;c&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class ThreadD extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private ClassVariable classVariable;</span><br><span class="line"></span><br><span class="line">	public ThreadD(ClassVariable classVariable) &#123;</span><br><span class="line">		this.classVariable = classVariable;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		super.run();</span><br><span class="line">		classVariable.add(&quot;d&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ThreadRunner：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class ThreandRunner &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		ClassVariable classVariable = new ClassVariable();</span><br><span class="line">		ThreadC c = new ThreadC(classVariable);</span><br><span class="line">		ThreadD d = new ThreadD(classVariable);</span><br><span class="line">		c.start();</span><br><span class="line">		d.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>多次运行，控制台有时打印：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c set end , count :10</span><br><span class="line">d set end , count :20</span><br></pre></td></tr></table></figure></p>
+<p>有时打印：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c set end , count :20</span><br><span class="line">d set end , count :20</span><br></pre></td></tr></table></figure></p>
+<p>如果在 ClassVariable 类中 add 方法添加 synchronized 关键字：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class ClassVariable &#123;</span><br><span class="line"></span><br><span class="line">	private int count = 0;</span><br><span class="line"></span><br><span class="line">	public synchronized void add(String name) &#123;</span><br><span class="line"></span><br><span class="line">		if (&quot;c&quot;.equals(name)) &#123;</span><br><span class="line">			count = 10;</span><br><span class="line">			System.out.println(name + &quot; set end , count :&quot; + count);</span><br><span class="line">			try &#123;</span><br><span class="line">				Thread.sleep(1000);</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		if (&quot;d&quot;.equals(name)) &#123;</span><br><span class="line">			count = 20;</span><br><span class="line">			System.out.println(name + &quot; set end , count :&quot; + count);</span><br><span class="line">			try &#123;</span><br><span class="line">				Thread.sleep(1000);</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么控制台也将一直打印：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c set end , count :10</span><br><span class="line">d set end , count :20</span><br></pre></td></tr></table></figure></p>
+<p>而如果创建了两个对象，让线程直接不共享对象，也不会出现同步问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class ThreandRunner &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		ClassVariable classVariable1 = new ClassVariable();</span><br><span class="line">		ClassVariable classVariable2 = new ClassVariable();</span><br><span class="line">		ThreadC c = new ThreadC(classVariable1);</span><br><span class="line">		ThreadD d = new ThreadD(classVariable2);</span><br><span class="line">		c.start();</span><br><span class="line">		d.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>控制台也将一直打印：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c set end , count :10</span><br><span class="line">d set end , count :20</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://longxianghome.com/2015/12/13/20151213-Thread 同步问题示例/" data-id="cjl3o0k69002mtr6bszhpyfc5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-Thread/">Java Thread</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20151212-Thread 常见方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/12/20151212-Thread 常见方法/" class="article-date">
+  <time datetime="2015-12-12T14:00:00.000Z" itemprop="datePublished">2015-12-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-Thread/">Java Thread</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/12/20151212-Thread 常见方法/">Thread 常见方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="简单方法"><a href="#简单方法" class="headerlink" title="简单方法"></a>简单方法</h4><p><strong>currentThread()</strong></p>
+<p>在上一节中，MyRunnable 中使用了 Thread.currentThread().getName() 这么一个方法，其实获取当前线程的名称。</p>
+<p>Thread.currentThread() 是一个静态的 native 方法，用于返回代码段正在被哪个线程调用的信息。</p>
+<p><strong>isAlive()</strong></p>
+<p>isAlive() 方法是用于判断当前的线程是否处于活动状态</p>
+<p><strong>sleep()</strong></p>
+<p>sleep() 方法是让当前线程正在执行的线程暂停执行，需要设置一个毫秒为单位的时间</p>
+<p><strong>getName()</strong></p>
+<p>getName() 方法是获取线程的名称</p>
+<p><strong>getId()</strong></p>
+<p>getId() 方法是获取线程的唯一标识</p>
+<p><strong>yield()</strong></p>
+<p>yield() 方法是让当前线程放弃 CPU 资源，将它让给其他线程去占用，但是放弃的时间是不确定的，而且可能放弃了又立即获取了</p>
+<p><strong>start()</strong> </p>
+<p>start() 方法是线程启动的唯一方法，需要和 run() 方法做区分，run() 方法只是 Thread 中一个普通的方法，并不能让线程启动</p>
+<h4 id="暂停线程"><a href="#暂停线程" class="headerlink" title="暂停线程"></a>暂停线程</h4><p>suspend() 方法可以暂停线程执行<br>resume() 方法可以恢复线程执行</p>
+<p>不过这两个方法都将独自线程资源，一旦线程调用了 suspend() 方法，必须自己调用 resume() 方法才能恢复线程，容易导致死锁</p>
+<h4 id="停止线程"><a href="#停止线程" class="headerlink" title="停止线程"></a>停止线程</h4><p>线程的停止比较复杂，Java 提供了三种方法用于线程的停止：</p>
+<ol>
+<li>使用退出标志，使线程可以正常退出</li>
+<li>使用 stop() 方法，但是已经使废弃的方法了</li>
+<li>使用 interrupt() 方法</li>
+</ol>
+<p>interrupt() 方法实际只会标记该线程需要停止，并不是立即停止</p>
+<h4 id="线程优先级"><a href="#线程优先级" class="headerlink" title="线程优先级"></a>线程优先级</h4><p>Java 为线程提供了 setPriority() 方法用于设置线程的优先级，优先级只是一定几率上提高其优先执行，但并不绝对。</p>
+<p>Java 将线程的优先级分为 1-10 共 10 个等级。</p>
+<p>Java 线程的优先级是可以继承的，如果 A 线程启动了 B 线程，那么 B 线程的优先级与 A 是一样的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://longxianghome.com/2015/12/12/20151212-Thread 常见方法/" data-id="cjl3o0k68002jtr6br5v6c177" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-Thread/">Java Thread</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/28/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/30/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CI/">CI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gitflow/">Gitflow</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JDK/">JDK</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JDK-源码-1-7/">JDK 源码 1.7</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JDK-源码-1-8-0-161/">JDK 源码 1.8.0_161</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JIRA/">JIRA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JPA/">JPA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Collections-Framework/">Java Collections Framework</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Concurrent/">Java Concurrent</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Servlet/">Java Servlet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Thread/">Java Thread</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-算法/">Java 算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MyBatis/">MyBatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MyBatis-原理/">MyBatis 原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MyCAT/">MyCAT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Boot/">Spring Boot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Cloud/">Spring Cloud</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Framework/">Spring Framework</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Security/">Spring Security</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ZooKeeper/">ZooKeeper</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/《Java-核心技术-36-讲》专栏笔记/">《Java 核心技术 36 讲》专栏笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/《深入拆解-Java-虚拟机》专栏笔记/">《深入拆解 Java 虚拟机》专栏笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/《深入理解Java虚拟机》/">《深入理解Java虚拟机》</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工作积累/">工作积累</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/行业知识/">行业知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArrayList/">ArrayList</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI/">CI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI-持续集成/">CI 持续集成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Collection/">Collection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Comparable/">Comparable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Comparator/">Comparator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ExceptionHandler/">ExceptionHandler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GS1/">GS1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitflow/">Gitflow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Iterator/">Iterator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK-8/">JDK 8</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JIRA/">JIRA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/">JPA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-Collections-Framework/">Java Collections Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-IO-Framework/">Java IO Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-Thread/">Java Thread</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-虚拟机/">Java 虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java虚拟机/">Java虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jenkins/">Jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyCAT/">MyCAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReentrantLock/">ReentrantLock</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RestTemplate/">RestTemplate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shadowsocks/">Shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sonatype-Nexus/">Sonatype Nexus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Cloud/">Spring Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Framework/">Spring Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Security/">Spring Security</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ThreadLocal/">ThreadLocal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZooKeeper/">ZooKeeper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/冒泡排序/">冒泡排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/包装类/">包装类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单例模式/">单例模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作积累/">工作积累</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/持续集成/">持续集成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插入排序/">插入排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程/">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/适配器模式/">适配器模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/选择排序/">选择排序</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/CI/" style="font-size: 11.82px;">CI</a> <a href="/tags/CI-持续集成/" style="font-size: 10px;">CI 持续集成</a> <a href="/tags/Collection/" style="font-size: 10px;">Collection</a> <a href="/tags/Comparable/" style="font-size: 10px;">Comparable</a> <a href="/tags/Comparator/" style="font-size: 10px;">Comparator</a> <a href="/tags/ExceptionHandler/" style="font-size: 10px;">ExceptionHandler</a> <a href="/tags/GS1/" style="font-size: 10.91px;">GS1</a> <a href="/tags/Gitflow/" style="font-size: 10px;">Gitflow</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Iterator/" style="font-size: 10px;">Iterator</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/JDK-8/" style="font-size: 12.73px;">JDK 8</a> <a href="/tags/JIRA/" style="font-size: 10px;">JIRA</a> <a href="/tags/JPA/" style="font-size: 17.27px;">JPA</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java-Collections-Framework/" style="font-size: 10px;">Java Collections Framework</a> <a href="/tags/Java-IO-Framework/" style="font-size: 14.55px;">Java IO Framework</a> <a href="/tags/Java-Thread/" style="font-size: 18.18px;">Java Thread</a> <a href="/tags/Java-虚拟机/" style="font-size: 11.82px;">Java 虚拟机</a> <a href="/tags/Java虚拟机/" style="font-size: 10.91px;">Java虚拟机</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MyBatis/" style="font-size: 20px;">MyBatis</a> <a href="/tags/MyCAT/" style="font-size: 10px;">MyCAT</a> <a href="/tags/MySQL/" style="font-size: 16.36px;">MySQL</a> <a href="/tags/Python/" style="font-size: 14.55px;">Python</a> <a href="/tags/Redis/" style="font-size: 10.91px;">Redis</a> <a href="/tags/ReentrantLock/" style="font-size: 10px;">ReentrantLock</a> <a href="/tags/RestTemplate/" style="font-size: 10px;">RestTemplate</a> <a href="/tags/Servlet/" style="font-size: 11.82px;">Servlet</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Sonatype-Nexus/" style="font-size: 10px;">Sonatype Nexus</a> <a href="/tags/Spring-Boot/" style="font-size: 19.09px;">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 16.36px;">Spring Cloud</a> <a href="/tags/Spring-Framework/" style="font-size: 15.45px;">Spring Framework</a> <a href="/tags/Spring-Security/" style="font-size: 13.64px;">Spring Security</a> <a href="/tags/ThreadLocal/" style="font-size: 10px;">ThreadLocal</a> <a href="/tags/ZooKeeper/" style="font-size: 10px;">ZooKeeper</a> <a href="/tags/冒泡排序/" style="font-size: 10px;">冒泡排序</a> <a href="/tags/包装类/" style="font-size: 10px;">包装类</a> <a href="/tags/单例模式/" style="font-size: 10.91px;">单例模式</a> <a href="/tags/工作积累/" style="font-size: 10px;">工作积累</a> <a href="/tags/持续集成/" style="font-size: 11.82px;">持续集成</a> <a href="/tags/插入排序/" style="font-size: 10px;">插入排序</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/选择排序/" style="font-size: 10px;">选择排序</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/08/20180808-Spring Security PasswordEncoder 相关源码阅读/">Spring Security PasswordEncoder 相关源码阅读</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/27/20180731-MySQL 事务隔离级别和悲观锁乐观锁原理/">MySQL 事务隔离级别和悲观锁乐观锁原理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/27/20180727-JVM 如何执行方法调用的/">JVM 如何执行方法调用的</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/25/20180725-Java 虚拟机是如何加载 Java 类的/">Java 虚拟机是如何加载 Java 类的</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/20/20180720-Java 代码是怎么运行的/">Java 代码是怎么运行的</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 longxiang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
