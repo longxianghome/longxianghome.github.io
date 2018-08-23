@@ -101,60 +101,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2016/05/27/20160527-JPA @Column 控制浮点数精度/" data-id="cjl6j8ii10052fi6buj04nayc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/">JPA</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-20180526-JPA @Column 注解详解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/26/20180526-JPA @Column 注解详解/" class="article-date">
-  <time datetime="2016-05-26T12:20:00.000Z" itemprop="datePublished">2016-05-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JPA/">JPA</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/26/20180526-JPA @Column 注解详解/">JPA @Column 注解详解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>@Column：<br>当实体的属性与其映射的数据库表的列不同名时需要使用@Column 标注说明，该属性通常置于实体的属性声明语句之前，还可与 @Id 标注一起使用。<br>@Column 标注的常用属性是name，用于设置映射数据库表的列名。此外，该标注还包含其它多个属性，如：unique、nullable、length 等。<br>@Column 标注的columnDefinition属性: 表示该字段在数据库中的实际类型.通常 ORM 框架可以根据属性类型自动判断数据库中字段的类型,但是对于Date类型仍无法确定数据库中字段类型究竟是DATE,TIME还是TIMESTAMP.此外,String的默认映射类型为VARCHAR,如果要将 String 类型映射到特定数据库的 BLOB 或TEXT字段类型.<br>@Column标注也可置于属性的getter方法之前</p>
-<p>name属性：<br>name属性定义了被标注字段在数据库表中所对应字段的名称</p>
-<p>unique属性：<br>unique属性表示该字段是否为唯一标识，默认为false。<br>如果表中有一个字段需要唯一标识，则既可以使用该标记，也可以使用@Table注解中的@UniqueConstraint，详情可参考@Table注解 详解</p>
-<p>nullable属性：<br>nullable属性表示该字段是否可以为null值，默认为true</p>
-<p>insertable属性：<br>insertable属性表示在使用”INSERT”语句插入数据时，是否需要插入该字段的值</p>
-<p>updateable属性：<br>updateable属性表示在使用”UPDATE”语句插入数据时，是否需要更新该字段的值</p>
-<p>insertable和updateable属性一般多用于只读的属性，例如主键和外键等，这些字段通常是自动生成的</p>
-<p>columnDefinition属性：<br>columnDefinition属性表示创建表时，该字段创建的SQL语句，一般用于通过Entity生成表定义时使用<br>如果数据库中表已经建好，该属性没有必要使用</p>
-<p>table属性：<br>table属性定义了包含当前字段的表名</p>
-<p>length属性：<br>length属性表示字段的长度，当字段的类型为varchar时，该属性才有效，默认为255个字符</p>
-<p>precision属性和scale属性：<br>precision属性和scale属性一起表示精度，当字段类型为double时，precision表示数值的总长度，scale表示小数点所占的位数</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2016/05/26/20180526-JPA @Column 注解详解/" data-id="cjl6j8imq00f6fi6b6yilefc0" class="article-share-link">Share</a>
+      <a data-url="http://longxianghome.com/2016/05/27/20160527-JPA @Column 控制浮点数精度/" data-id="cjl6jzz7f0050n76bq0iv4er8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/">JPA</a></li></ul>
@@ -209,7 +156,60 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2016/05/26/20180527-JPA @Column 的 columnDefinition 属性使用详解/" data-id="cjl6j8imk00f2fi6b02xghs1i" class="article-share-link">Share</a>
+      <a data-url="http://longxianghome.com/2016/05/26/20180527-JPA @Column 的 columnDefinition 属性使用详解/" data-id="cjl6jzzb000etn76bcr2i3hxs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/">JPA</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20180526-JPA @Column 注解详解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/26/20180526-JPA @Column 注解详解/" class="article-date">
+  <time datetime="2016-05-26T12:20:00.000Z" itemprop="datePublished">2016-05-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JPA/">JPA</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/26/20180526-JPA @Column 注解详解/">JPA @Column 注解详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>@Column：<br>当实体的属性与其映射的数据库表的列不同名时需要使用@Column 标注说明，该属性通常置于实体的属性声明语句之前，还可与 @Id 标注一起使用。<br>@Column 标注的常用属性是name，用于设置映射数据库表的列名。此外，该标注还包含其它多个属性，如：unique、nullable、length 等。<br>@Column 标注的columnDefinition属性: 表示该字段在数据库中的实际类型.通常 ORM 框架可以根据属性类型自动判断数据库中字段的类型,但是对于Date类型仍无法确定数据库中字段类型究竟是DATE,TIME还是TIMESTAMP.此外,String的默认映射类型为VARCHAR,如果要将 String 类型映射到特定数据库的 BLOB 或TEXT字段类型.<br>@Column标注也可置于属性的getter方法之前</p>
+<p>name属性：<br>name属性定义了被标注字段在数据库表中所对应字段的名称</p>
+<p>unique属性：<br>unique属性表示该字段是否为唯一标识，默认为false。<br>如果表中有一个字段需要唯一标识，则既可以使用该标记，也可以使用@Table注解中的@UniqueConstraint，详情可参考@Table注解 详解</p>
+<p>nullable属性：<br>nullable属性表示该字段是否可以为null值，默认为true</p>
+<p>insertable属性：<br>insertable属性表示在使用”INSERT”语句插入数据时，是否需要插入该字段的值</p>
+<p>updateable属性：<br>updateable属性表示在使用”UPDATE”语句插入数据时，是否需要更新该字段的值</p>
+<p>insertable和updateable属性一般多用于只读的属性，例如主键和外键等，这些字段通常是自动生成的</p>
+<p>columnDefinition属性：<br>columnDefinition属性表示创建表时，该字段创建的SQL语句，一般用于通过Entity生成表定义时使用<br>如果数据库中表已经建好，该属性没有必要使用</p>
+<p>table属性：<br>table属性定义了包含当前字段的表名</p>
+<p>length属性：<br>length属性表示字段的长度，当字段的类型为varchar时，该属性才有效，默认为255个字符</p>
+<p>precision属性和scale属性：<br>precision属性和scale属性一起表示精度，当字段类型为double时，precision表示数值的总长度，scale表示小数点所占的位数</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://longxianghome.com/2016/05/26/20180526-JPA @Column 注解详解/" data-id="cjl6jzzax00emn76bopvou3qp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/">JPA</a></li></ul>
@@ -260,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2016/05/25/20160525-JPA @Id 和 @GeneratedValue 注解详解/" data-id="cjl6j8ihu004nfi6bm3w12lan" class="article-share-link">Share</a>
+      <a data-url="http://longxianghome.com/2016/05/25/20160525-JPA @Id 和 @GeneratedValue 注解详解/" data-id="cjl6jzz7b004pn76b7yo837e5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/">JPA</a></li></ul>
@@ -331,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2016/05/24/20160524-JPA @Table 注解详解/" data-id="cjl6j8ihw004vfi6bnixrrc51" class="article-share-link">Share</a>
+      <a data-url="http://longxianghome.com/2016/05/24/20160524-JPA @Table 注解详解/" data-id="cjl6jzz7e004xn76b9la8wrm3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/">JPA</a></li></ul>

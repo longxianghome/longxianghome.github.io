@@ -134,7 +134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2017/01/12/20170112-Spring Framework Bean 命名/" data-id="cjl6j8iir0077fi6bd7fzzdnm" class="article-share-link">Share</a>
+      <a data-url="http://longxianghome.com/2017/01/12/20170112-Spring Framework Bean 命名/" data-id="cjl6jzz87007an76bnodbzlgk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Framework/">Spring Framework</a></li></ul>
@@ -181,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2017/01/11/20170701-Spring Framework HelloWorld/" data-id="cjl6j8ipe00k9fi6b4det216b" class="article-share-link">Share</a>
+      <a data-url="http://longxianghome.com/2017/01/11/20170701-Spring Framework HelloWorld/" data-id="cjl6jzzek00khn76bhehdc4zl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Framework/">Spring Framework</a></li></ul>
@@ -244,10 +244,75 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2017/01/11/20170111-Spring Framework 概述/" data-id="cjl6j8iiu007ffi6bxz7jhz05" class="article-share-link">Share</a>
+      <a data-url="http://longxianghome.com/2017/01/11/20170111-Spring Framework 概述/" data-id="cjl6jzz860078n76bqotp2vx4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Framework/">Spring Framework</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20170107-CI 持续集成服务器搭建-Jenkins 篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/28/20170107-CI 持续集成服务器搭建-Jenkins 篇/" class="article-date">
+  <time datetime="2016-12-28T14:49:24.000Z" itemprop="datePublished">2016-12-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CI/">CI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/28/20170107-CI 持续集成服务器搭建-Jenkins 篇/">CI 持续集成服务器搭建 - Jenkins 篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>6    Jenkins 安装篇<br>Jenkins 是Java语言编写，依赖于Java运行环境，需要提前安装JDK或JRE<br>6.1    下载<br>Jenkins是开源的，官方网站有现成的编译好的war包，直接下载即可<br>官方网站地址：<a href="https://jenkins.io/index.html" target="_blank" rel="noopener">https://jenkins.io/index.html</a><br>本次下载2.32.1版本<br> <img src="http://img.blog.csdn.net/20170107151833718?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>6.2    安装<br>Jenkins 安装有两种方式：<br>方式一：使用内置的Jetty运行<br>直接执行 java –jar Jenkins.war 命令即可<br>该方式默认使用8080端口, 在浏览器中输入<a href="http://192.168.1.203:8080即可访问Jenkins" target="_blank" rel="noopener">http://192.168.1.203:8080即可访问Jenkins</a><br>该方式默认使用8080端口，若需要更换端口则需要重新编译war包，故不推荐</p>
+<p>方式二：通过tomcat运行<br>为Jenkins单独准备一个tomcat<br>在/usr/local目录下创建jenkins目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/local</span><br><span class="line"># mkdir jenkins</span><br></pre></td></tr></table></figure>
+<p>在jenkins目录下配置一个tomcat，具体配置参考Tomcat篇</p>
+<p>本次具体端口如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Server prot=&quot;38005&quot; shutdown=&quot;SHUTDOWN&quot;&gt;</span><br><span class="line">&lt;Connector port=&quot;38080&quot; protocol=&quot;HTTP/1.1&quot; </span><br><span class="line">	connectionTimeout=&quot;20000&quot; redirectPort=&quot;38443&quot; URIEncoding=&quot;UTF-8&quot; /&gt;</span><br><span class="line">&lt;Connector port=&quot;38443&quot; protocol=&quot;org.apache.coyote.http11.Http11Protocol&quot; …</span><br></pre></td></tr></table></figure>
+<p>在防火墙中打开38080端口，具体参考Tomcat篇配置防火墙端口<br>配置jenkins-tomcat随系统启动，具体参考Tomcat篇配置tomcat随系统启动<br>可删除jenkins-tomcat/webapps目录下docs目录和examples目录<br>删除ROOT目录下文件，将jenkins.war解压后放入ROOT目录<br>war的解压命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># jar –xvf jenkins.war</span><br></pre></td></tr></table></figure>
+<p>6.3    设置jenkins随系统启动<br>即设置jenkins-tomcat随系统启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># echo &quot;/usr/local/jenkins/jenkins-tomcat/bin/startup.sh start&quot; &gt;&gt; /etc/rc.d/rc.local</span><br></pre></td></tr></table></figure>
+<p>6.4    创建jenkins数据目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/local/Jenkins</span><br><span class="line"># mdkir data</span><br></pre></td></tr></table></figure>
+<p>6.5    编辑profile文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#set jenkins home</span><br><span class="line">export JENKINS_HOME=/usr/local/jenkins/data</span><br></pre></td></tr></table></figure>
+<p>在文件中追加如上蓝色字体内容<br>编辑完毕通过Esc键退出编辑，键入wq命令写入保存退出</p>
+<p>使编辑立即生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># source /etc/profile</span><br></pre></td></tr></table></figure>
+<p>6.6    访问并初始化jenkins<br>启动jenkins-tomcat并访问：<a href="http://192.168.1.204:38080" target="_blank" rel="noopener">http://192.168.1.204:38080</a><br> <img src="http://img.blog.csdn.net/20170107152013422?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>初始密码在设置的jenkins数据目录/secrets/initialAdminPassword文件中<br>查看启动日志（jenkins-tomcat日志）也可以看到初始密码、<br>输入密码后继续<br> <img src="http://img.blog.csdn.net/20170107152022107?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>选择Install suggested plugins 将安装一些默认的插件<br> <img src="http://img.blog.csdn.net/20170107152031766?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>插件安装完成后设置第一个用户的账号信息（即管理员账号信息）<br>本次设置：<br>用户名：admin<br>密码：admin<br>全名：admin<br>邮箱：<br> <img src="http://img.blog.csdn.net/20170107152047266?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>7    Jenkins 使用篇<br>7.1    设置JDK和Maven<br> <img src="http://img.blog.csdn.net/20170107152058671?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br> <img src="http://img.blog.csdn.net/20170107152115030?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br> <img src="http://img.blog.csdn.net/20170107152128047?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20170107152138203?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>7.2    安装maven插件<br> <img src="http://img.blog.csdn.net/20170107152146016?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br> <img src="http://img.blog.csdn.net/20170107152158313?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>7.3    新建构建Maven项目任务<br> <img src="http://img.blog.csdn.net/20170107152211297?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>输入job名称并选择构建maven项目<br> <img src="http://img.blog.csdn.net/20170107152220141?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>选择源码管理，选择Subversion，输入upload的版本库地址<br> <img src="http://img.blog.csdn.net/20170107152254408?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>输入svn账号密码<br> <img src="http://img.blog.csdn.net/20170107152304674?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br> <img src="http://img.blog.csdn.net/20170107152318393?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>7.4    执行构建<br> <img src="http://img.blog.csdn.net/20170107152334924?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>第一次构建会下载很多maven所需的依赖包<br> <img src="http://img.blog.csdn.net/20170107152341596?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>表示构建成功</p>
+<p>更多实践待续</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://longxianghome.com/2016/12/28/20170107-CI 持续集成服务器搭建-Jenkins 篇/" data-id="cjl6jzz7z006jn76bbrx5q0b9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CI/">CI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jenkins/">Jenkins</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/持续集成/">持续集成</a></li></ul>
 
     </footer>
   </div>
@@ -317,75 +382,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2016/12/28/20161228-CI 持续集成服务器搭建-Maven + Tomcat 篇/" data-id="cjl6j8iil006ofi6bc3o67x67" class="article-share-link">Share</a>
+      <a data-url="http://longxianghome.com/2016/12/28/20161228-CI 持续集成服务器搭建-Maven + Tomcat 篇/" data-id="cjl6jzz7x006en76bcsgfthfa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CI/">CI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/持续集成/">持续集成</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-20170107-CI 持续集成服务器搭建-Jenkins 篇" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/28/20170107-CI 持续集成服务器搭建-Jenkins 篇/" class="article-date">
-  <time datetime="2016-12-28T14:49:24.000Z" itemprop="datePublished">2016-12-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CI/">CI</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/28/20170107-CI 持续集成服务器搭建-Jenkins 篇/">CI 持续集成服务器搭建 - Jenkins 篇</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>6    Jenkins 安装篇<br>Jenkins 是Java语言编写，依赖于Java运行环境，需要提前安装JDK或JRE<br>6.1    下载<br>Jenkins是开源的，官方网站有现成的编译好的war包，直接下载即可<br>官方网站地址：<a href="https://jenkins.io/index.html" target="_blank" rel="noopener">https://jenkins.io/index.html</a><br>本次下载2.32.1版本<br> <img src="http://img.blog.csdn.net/20170107151833718?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>6.2    安装<br>Jenkins 安装有两种方式：<br>方式一：使用内置的Jetty运行<br>直接执行 java –jar Jenkins.war 命令即可<br>该方式默认使用8080端口, 在浏览器中输入<a href="http://192.168.1.203:8080即可访问Jenkins" target="_blank" rel="noopener">http://192.168.1.203:8080即可访问Jenkins</a><br>该方式默认使用8080端口，若需要更换端口则需要重新编译war包，故不推荐</p>
-<p>方式二：通过tomcat运行<br>为Jenkins单独准备一个tomcat<br>在/usr/local目录下创建jenkins目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/local</span><br><span class="line"># mkdir jenkins</span><br></pre></td></tr></table></figure>
-<p>在jenkins目录下配置一个tomcat，具体配置参考Tomcat篇</p>
-<p>本次具体端口如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Server prot=&quot;38005&quot; shutdown=&quot;SHUTDOWN&quot;&gt;</span><br><span class="line">&lt;Connector port=&quot;38080&quot; protocol=&quot;HTTP/1.1&quot; </span><br><span class="line">	connectionTimeout=&quot;20000&quot; redirectPort=&quot;38443&quot; URIEncoding=&quot;UTF-8&quot; /&gt;</span><br><span class="line">&lt;Connector port=&quot;38443&quot; protocol=&quot;org.apache.coyote.http11.Http11Protocol&quot; …</span><br></pre></td></tr></table></figure>
-<p>在防火墙中打开38080端口，具体参考Tomcat篇配置防火墙端口<br>配置jenkins-tomcat随系统启动，具体参考Tomcat篇配置tomcat随系统启动<br>可删除jenkins-tomcat/webapps目录下docs目录和examples目录<br>删除ROOT目录下文件，将jenkins.war解压后放入ROOT目录<br>war的解压命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># jar –xvf jenkins.war</span><br></pre></td></tr></table></figure>
-<p>6.3    设置jenkins随系统启动<br>即设置jenkins-tomcat随系统启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># echo &quot;/usr/local/jenkins/jenkins-tomcat/bin/startup.sh start&quot; &gt;&gt; /etc/rc.d/rc.local</span><br></pre></td></tr></table></figure>
-<p>6.4    创建jenkins数据目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/local/Jenkins</span><br><span class="line"># mdkir data</span><br></pre></td></tr></table></figure>
-<p>6.5    编辑profile文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/profile</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#set jenkins home</span><br><span class="line">export JENKINS_HOME=/usr/local/jenkins/data</span><br></pre></td></tr></table></figure>
-<p>在文件中追加如上蓝色字体内容<br>编辑完毕通过Esc键退出编辑，键入wq命令写入保存退出</p>
-<p>使编辑立即生效</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># source /etc/profile</span><br></pre></td></tr></table></figure>
-<p>6.6    访问并初始化jenkins<br>启动jenkins-tomcat并访问：<a href="http://192.168.1.204:38080" target="_blank" rel="noopener">http://192.168.1.204:38080</a><br> <img src="http://img.blog.csdn.net/20170107152013422?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>初始密码在设置的jenkins数据目录/secrets/initialAdminPassword文件中<br>查看启动日志（jenkins-tomcat日志）也可以看到初始密码、<br>输入密码后继续<br> <img src="http://img.blog.csdn.net/20170107152022107?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>选择Install suggested plugins 将安装一些默认的插件<br> <img src="http://img.blog.csdn.net/20170107152031766?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>插件安装完成后设置第一个用户的账号信息（即管理员账号信息）<br>本次设置：<br>用户名：admin<br>密码：admin<br>全名：admin<br>邮箱：<br> <img src="http://img.blog.csdn.net/20170107152047266?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>7    Jenkins 使用篇<br>7.1    设置JDK和Maven<br> <img src="http://img.blog.csdn.net/20170107152058671?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br> <img src="http://img.blog.csdn.net/20170107152115030?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br> <img src="http://img.blog.csdn.net/20170107152128047?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20170107152138203?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>7.2    安装maven插件<br> <img src="http://img.blog.csdn.net/20170107152146016?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br> <img src="http://img.blog.csdn.net/20170107152158313?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>7.3    新建构建Maven项目任务<br> <img src="http://img.blog.csdn.net/20170107152211297?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>输入job名称并选择构建maven项目<br> <img src="http://img.blog.csdn.net/20170107152220141?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>选择源码管理，选择Subversion，输入upload的版本库地址<br> <img src="http://img.blog.csdn.net/20170107152254408?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>输入svn账号密码<br> <img src="http://img.blog.csdn.net/20170107152304674?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br> <img src="http://img.blog.csdn.net/20170107152318393?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>7.4    执行构建<br> <img src="http://img.blog.csdn.net/20170107152334924?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>第一次构建会下载很多maven所需的依赖包<br> <img src="http://img.blog.csdn.net/20170107152341596?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUmlja2VzeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>表示构建成功</p>
-<p>更多实践待续</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2016/12/28/20170107-CI 持续集成服务器搭建-Jenkins 篇/" data-id="cjl6j8iij006gfi6b3sipvamw" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CI/">CI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jenkins/">Jenkins</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/持续集成/">持续集成</a></li></ul>
 
     </footer>
   </div>
