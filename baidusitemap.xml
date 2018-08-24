@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>http://longxianghome.com/2016/09/10/20160910-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-08-24T08:55:59.613Z</lastmod>
+    <data>
+        <display>
+        <title>工厂模式详解</title>
+        <pubTime>2016-09-10T14:49:24.000Z</pubTime>
+        
+        <tag>工厂模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://longxianghome.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/09/09/20160909-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E5%85%AD%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</loc>
+    <lastmod>2018-08-24T08:22:02.502Z</lastmod>
+    <data>
+        <display>
+        <title>单例模式六种实现方式</title>
+        <pubTime>2016-09-09T14:49:24.000Z</pubTime>
+        
+        <tag>单例模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://longxianghome.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/09/08/20160908-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E6%A6%82%E8%BF%B0/</loc>
+    <lastmod>2018-08-24T08:21:34.516Z</lastmod>
+    <data>
+        <display>
+        <title>单例模式概述</title>
+        <pubTime>2016-09-08T13:49:24.000Z</pubTime>
+        
+        <tag>单例模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://longxianghome.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://longxianghome.com/2016/07/15/20160715-MyBatis%20%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B/</loc>
     <lastmod>2018-08-23T08:54:34.547Z</lastmod>
     <data>
@@ -2918,26 +2978,6 @@
 
     
   <url>
-    <loc>http://longxianghome.com/2017/07/18/20170718-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E6%A6%82%E8%BF%B0/</loc>
-    <lastmod>2018-08-18T13:33:48.639Z</lastmod>
-    <data>
-        <display>
-        <title>单例模式概述</title>
-        <pubTime>2017-07-18T13:49:24.000Z</pubTime>
-        
-        <tag>单例模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计模式" url="http://longxianghome.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://longxianghome.com/2017/12/28/20171228-Gitflow%20%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
     <lastmod>2018-08-18T13:27:56.203Z</lastmod>
     <data>
@@ -3491,26 +3531,6 @@
            
              
               <breadCrumb title="MyBatis" url="http://longxianghome.com/categories/MyBatis/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/07/18/20170718-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E5%85%AD%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</loc>
-    <lastmod>2018-05-03T14:29:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>单例模式六种实现方式</title>
-        <pubTime>2017-07-18T14:49:24.000Z</pubTime>
-        
-        <tag>单例模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计模式" url="http://longxianghome.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
           
         </display>
     </data>
