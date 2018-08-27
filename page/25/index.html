@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-20160604-JPA EntityManager remove 方法详解" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-20160908-单例模式概述" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/04/20160604-JPA EntityManager remove 方法详解/" class="article-date">
-  <time datetime="2016-06-04T12:20:00.000Z" itemprop="datePublished">2016-06-04</time>
+    <a href="/2016/09/08/20160908-单例模式概述/" class="article-date">
+  <time datetime="2016-09-08T13:49:24.000Z" itemprop="datePublished">2016-09-08</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/JPA/">JPA</a>
+    <a class="article-category-link" href="/categories/设计模式/">设计模式</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/04/20160604-JPA EntityManager remove 方法详解/">JPA EntityManager remove 方法详解</a>
+      <a class="article-title" href="/2016/09/08/20160908-单例模式概述/">单例模式概述</a>
     </h1>
   
 
@@ -92,191 +92,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">	public void testRemove()&#123;</span><br><span class="line">		EntityManagerFactory factory;</span><br><span class="line">		EntityManager manager;</span><br><span class="line">		EntityTransaction transaction;</span><br><span class="line">		factory = Persistence.createEntityManagerFactory(&quot;JPA&quot;);</span><br><span class="line">		manager = factory.createEntityManager();</span><br><span class="line">		transaction = manager.getTransaction();</span><br><span class="line">		transaction.begin();</span><br><span class="line">		</span><br><span class="line">		Customer customer = manager.find(Customer.class, 2);</span><br><span class="line">		manager.remove(customer);</span><br><span class="line">		</span><br><span class="line">		transaction.commit();</span><br><span class="line">		manager.close();</span><br><span class="line">		factory.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>SQL：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Hibernate: </span><br><span class="line">    select</span><br><span class="line">        customer0_.ID as ID1_0_0_,</span><br><span class="line">        customer0_.Age as Age2_0_0_,</span><br><span class="line">        customer0_.Email as Email3_0_0_,</span><br><span class="line">        customer0_.Name as Name4_0_0_ </span><br><span class="line">    from</span><br><span class="line">        CUSTOMERS customer0_ </span><br><span class="line">    where</span><br><span class="line">        customer0_.ID=?</span><br><span class="line">Hibernate: </span><br><span class="line">    delete </span><br><span class="line">    from</span><br><span class="line">        CUSTOMERS </span><br><span class="line">    where</span><br><span class="line">        ID=?</span><br></pre></td></tr></table></figure>
-<p>若某一个对象在数据库中存在，EntityManager将通过remove方法对其进行删除</p>
-<p>但是，remove方法不能用于与游离对象，若移除游离对象将抛出异常</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public void testRemove()&#123;</span><br><span class="line">		EntityManagerFactory factory;</span><br><span class="line">		EntityManager manager;</span><br><span class="line">		EntityTransaction transaction;</span><br><span class="line">		factory = Persistence.createEntityManagerFactory(&quot;JPA&quot;);</span><br><span class="line">		manager = factory.createEntityManager();</span><br><span class="line">		transaction = manager.getTransaction();</span><br><span class="line">		transaction.begin();</span><br><span class="line">		</span><br><span class="line">		Customer customer = new Customer();</span><br><span class="line">		customer.setId(2);</span><br><span class="line">		manager.remove(customer);</span><br><span class="line">		</span><br><span class="line">		transaction.commit();</span><br><span class="line">		manager.close();</span><br><span class="line">		factory.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>而Hibernate的delete方法允许</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2016/06/04/20160604-JPA EntityManager remove 方法详解/" data-id="cjl7ru22s005q0i6bfeotzafy" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/">JPA</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-20160603-JPA EntityManager persist 方法详解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/03/20160603-JPA EntityManager persist 方法详解/" class="article-date">
-  <time datetime="2016-06-03T12:20:00.000Z" itemprop="datePublished">2016-06-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JPA/">JPA</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/03/20160603-JPA EntityManager persist 方法详解/">JPA EntityManager persist 方法详解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">	public void testPersistence()&#123;</span><br><span class="line">		EntityManagerFactory factory;</span><br><span class="line">		EntityManager manager;</span><br><span class="line">		EntityTransaction transaction;</span><br><span class="line">		factory = Persistence.createEntityManagerFactory(&quot;JPA&quot;);</span><br><span class="line">		manager = factory.createEntityManager();</span><br><span class="line">		transaction = manager.getTransaction();</span><br><span class="line">		transaction.begin();</span><br><span class="line">		</span><br><span class="line">		Customer customer = new Customer();</span><br><span class="line">		customer.setAge(15);</span><br><span class="line">		customer.setName(&quot;张三&quot;);</span><br><span class="line">		manager.persist(customer);</span><br><span class="line">		</span><br><span class="line">		transaction.commit();</span><br><span class="line">		manager.close();</span><br><span class="line">		factory.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>SQL：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Hibernate: </span><br><span class="line">    insert </span><br><span class="line">    into</span><br><span class="line">        CUSTOMERS</span><br><span class="line">        (Age, Email, Name) </span><br><span class="line">    values</span><br><span class="line">        (?, ?, ?)</span><br></pre></td></tr></table></figure>
-<p>persist方法类似于Hibernate save方法，但是存在一个不同点：<br>在数据库主键自增情况下：若提前设置id属性值，JPA EntityManager 的 persist方法将抛出异常，而Hibernate Session的 save 方法可以执行，将忽略提前设置的id值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Table(name = &quot;CUSTOMERS&quot;)</span><br><span class="line">@Entity</span><br><span class="line">public class Customer &#123;</span><br><span class="line">	@Column(name = &quot;ID&quot;)</span><br><span class="line">	@GeneratedValue(strategy = GenerationType.AUTO)</span><br><span class="line">	@Id</span><br><span class="line">	private Integer id;</span><br><span class="line">	@Column(name = &quot;Name&quot;)</span><br><span class="line">	private String name;</span><br><span class="line">	@Column(name = &quot;Email&quot;)</span><br><span class="line">	private String email;</span><br><span class="line">	@Column(name = &quot;Age&quot;)</span><br><span class="line">	private int age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>persist：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> @Test</span><br><span class="line">public void testPersistence()&#123;</span><br><span class="line">	EntityManagerFactory factory;</span><br><span class="line">	EntityManager manager;</span><br><span class="line">	EntityTransaction transaction;</span><br><span class="line">	factory = Persistence.createEntityManagerFactory(&quot;JPA&quot;);</span><br><span class="line">	manager = factory.createEntityManager();</span><br><span class="line">	transaction = manager.getTransaction();</span><br><span class="line">	transaction.begin();</span><br><span class="line">	</span><br><span class="line">	Customer customer = new Customer();</span><br><span class="line">	customer.setId(3);</span><br><span class="line">	customer.setAge(15);</span><br><span class="line">	customer.setName(&quot;张三&quot;);</span><br><span class="line">	manager.persist(customer);</span><br><span class="line">	</span><br><span class="line">	transaction.commit();</span><br><span class="line">	manager.close();</span><br><span class="line">	factory.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>抛出org.hibernate.PersistentObjectException</p>
-<p>hibernate save：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">   @Test</span><br><span class="line">public void test()&#123;</span><br><span class="line">	//1.创建一个SessionFactory对象</span><br><span class="line">	SessionFactory factory = null;</span><br><span class="line">	//1) 创建Configuration对象</span><br><span class="line">	Configuration cfg = new Configuration().configure();</span><br><span class="line">	ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()</span><br><span class="line">				.applySettings(cfg.getProperties()).build();</span><br><span class="line">	factory = cfg.buildSessionFactory(serviceRegistry);</span><br><span class="line">	</span><br><span class="line">	//2.创建一个Session对象</span><br><span class="line">	Session session = factory.openSession();</span><br><span class="line">	</span><br><span class="line">	//3.开启事务</span><br><span class="line">	Transaction transaction = session.beginTransaction();</span><br><span class="line">	</span><br><span class="line">	//4.执行保存操作</span><br><span class="line">	User user = new User(&quot;张三&quot;, &quot;杭州&quot;, new Date());</span><br><span class="line">	user.setId(10);</span><br><span class="line">	System.out.println(user);</span><br><span class="line">	session.save(user);</span><br><span class="line">	System.out.println(user);</span><br><span class="line">	//5.提交事务</span><br><span class="line">	transaction.commit();</span><br><span class="line">	</span><br><span class="line">	//6.关闭Session</span><br><span class="line">	session.close();</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">User [id=10, name=张三, address=杭州, createOn=Fri Jan 29 11:33:15 CST 2016]</span><br><span class="line">Hibernate: </span><br><span class="line">    insert </span><br><span class="line">    into</span><br><span class="line">        users</span><br><span class="line">        (name, Address, createOn, description) </span><br><span class="line">    values</span><br><span class="line">        (?, ?, ?, ?)</span><br><span class="line">User [id=8, name=张三, address=杭州, createOn=Fri Jan 29 11:33:15 CST 2016]</span><br></pre></td></tr></table></figure>
-<p>虽然提前设置了，但是将被忽略</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2016/06/03/20160603-JPA EntityManager persist 方法详解/" data-id="cjl7ru22n005a0i6b14qsuxcu" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/">JPA</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-20160602-JPA EntityManager find 和 getFeference 方法异同" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/02/20160602-JPA EntityManager find 和 getFeference 方法异同/" class="article-date">
-  <time datetime="2016-06-02T12:20:00.000Z" itemprop="datePublished">2016-06-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JPA/">JPA</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/02/20160602-JPA EntityManager find 和 getFeference 方法异同/">JPA EntityManager find 和 getReference 方法异同</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>find (Class<t> entityClass,Object primaryKey)：<br>返回指定的 OID 对应的实体类对象，如果这个实体存在于当前的持久化环境，则返回一个被缓存的对象；否则会创建一个新的 Entity, 并加载数据库中相关信息；若 OID 不存在于数据库中，则返回一个 null。第一个参数为被查询的实体类类型，第二个参数为待查找实体的主键值。</t></p>
-<p>getReference (Class<t> entityClass,Object primaryKey)：<br>与find()方法类似，不同的是：如果缓存中不存在指定的 Entity, EntityManager会创建一个 Entity 类的代理，但是不会立即加载数据库中的信息，只有第一次真正使用此 Entity 的属性才加载，所以如果此 OID 在数据库不存在，getReference() 不会返回 null 值, 而是抛出EntityNotFoundException</t></p>
-<p>find：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> //类似于Hibernate get方法</span><br><span class="line">@Test</span><br><span class="line">public void testFind()&#123;</span><br><span class="line">	EntityManagerFactory factory;</span><br><span class="line">	EntityManager manager;</span><br><span class="line">	factory = Persistence.createEntityManagerFactory(&quot;JPA&quot;);</span><br><span class="line">	manager = factory.createEntityManager();</span><br><span class="line"></span><br><span class="line">	Customer customer = manager.find(Customer.class, 1);</span><br><span class="line">	System.out.println(&quot;--------------------&quot;);</span><br><span class="line">	System.out.println(customer);</span><br><span class="line">	</span><br><span class="line">	manager.close();</span><br><span class="line">	factory.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>SQL：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Hibernate: </span><br><span class="line">    select</span><br><span class="line">        customer0_.ID as ID1_0_0_,</span><br><span class="line">        customer0_.Age as Age2_0_0_,</span><br><span class="line">        customer0_.Email as Email3_0_0_,</span><br><span class="line">        customer0_.Name as Name4_0_0_ </span><br><span class="line">    from</span><br><span class="line">        CUSTOMERS customer0_ </span><br><span class="line">    where</span><br><span class="line">        customer0_.ID=?</span><br><span class="line">--------------------</span><br><span class="line">Customer [id=1, name=张三, email=null, age=15]</span><br></pre></td></tr></table></figure>
-<p>getReference：懒加载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//类似于Hibernate load方法,代理 懒加载,存在懒加载异常</span><br><span class="line">@Test</span><br><span class="line">public void testGetReference()&#123;</span><br><span class="line">	EntityManagerFactory factory;</span><br><span class="line">	EntityManager manager;</span><br><span class="line">	factory = Persistence.createEntityManagerFactory(&quot;JPA&quot;);</span><br><span class="line">	manager = factory.createEntityManager();</span><br><span class="line">	</span><br><span class="line">	Customer customer = manager.getReference(Customer.class, 1);</span><br><span class="line">	System.out.println(&quot;--------------------&quot;);</span><br><span class="line">	System.out.println(customer);</span><br><span class="line">	</span><br><span class="line">	manager.close();</span><br><span class="line">	factory.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>SQL：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">--------------------</span><br><span class="line">Hibernate: </span><br><span class="line">    select</span><br><span class="line">        customer0_.ID as ID1_0_0_,</span><br><span class="line">        customer0_.Age as Age2_0_0_,</span><br><span class="line">        customer0_.Email as Email3_0_0_,</span><br><span class="line">        customer0_.Name as Name4_0_0_ </span><br><span class="line">    from</span><br><span class="line">        CUSTOMERS customer0_ </span><br><span class="line">    where</span><br><span class="line">        customer0_.ID=?</span><br><span class="line">Customer [id=1, name=张三, email=null, age=15]</span><br></pre></td></tr></table></figure>
-<p>总结：<br>find：直接查询，不管是否立即使用，类似于hibernate get方法<br>getReference：实际先返回一个代理对象，等需要使用时，再进行查询，懒加载模式，类似于hibernate load方法，可能抛出懒加载异常</p>
-<p>懒加载异常：<br>在使用对象前关闭连接，由于对象实际是一个代理对象，在使用时将抛出懒加载异常</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2016/06/02/20160602-JPA EntityManager find 和 getFeference 方法异同/" data-id="cjl7ru22r005n0i6brwsatbqr" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/">JPA</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-20160530-JPA API 详解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/30/20160530-JPA API 详解/" class="article-date">
-  <time datetime="2016-05-30T12:20:00.000Z" itemprop="datePublished">2016-05-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JPA/">JPA</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/30/20160530-JPA API 详解/">JPA API 详解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Persistence：<br>Persistence  类是用于获取 EntityManagerFactory实例。该类包含一个名为 createEntityManagerFactory 的 静态方法 。<br>createEntityManagerFactory方法有如下两个重载版本。<br>    –带有一个参数的方法以 JPA 配置文件 persistence.xml 中的持久化单元名为参数<br>    –带有两个参数的方法：前一个参数含义相同，后一个参数 Map类型，用于设置 JPA 的相关属性，这时将忽略其它地方设置的属性。Map 对象的属性名必须是 JPA 实现库提供商的名字空间约定的属性名。<br>常用方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//persistence.xml文件中persistence-unit标签name属性值</span><br><span class="line">String persistenceUnitName = &quot;JPA&quot;;</span><br><span class="line">//1.创建EntitymanagerFactory</span><br><span class="line">EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(persistenceUnitName);</span><br></pre></td></tr></table></figure>
-<p>非常用方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;persistence version=&quot;2.0&quot;</span><br><span class="line">	xmlns=&quot;http://java.sun.com/xml/ns/persistence&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">	xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd&quot;&gt;</span><br><span class="line">	&lt;persistence-unit name=&quot;JPA&quot; transaction-type=&quot;RESOURCE_LOCAL&quot;&gt;</span><br><span class="line">		&lt;!-- </span><br><span class="line">			配置使用什么ORM产品来作为JPA实现</span><br><span class="line">			1.实际配置的是javax.persistence.spi.PersistenceProvider接口实现类</span><br><span class="line">			2.若项目中只有一个ORM产品,该配置可以省略</span><br><span class="line">		--&gt;</span><br><span class="line">		&lt;provider&gt;org.hibernate.ejb.HibernatePersistence&lt;/provider&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;!-- 添加持久化类 --&gt;</span><br><span class="line">		&lt;class&gt;com.dragon.jpa.model.Customer&lt;/class&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;properties&gt;</span><br><span class="line">			&lt;!-- 配置数据库连接信息 --&gt;</span><br><span class="line">			&lt;property name=&quot;javax.persistence.jdbc.driver&quot; value=&quot;com.mysql.jdbc.Driver&quot; /&gt;</span><br><span class="line">			&lt;property name=&quot;javax.persistence.jdbc.url&quot; value=&quot;jdbc:mysql://localhost:3306/jpa&quot; /&gt;</span><br><span class="line">			&lt;property name=&quot;javax.persistence.jdbc.user&quot; value=&quot;mysql&quot; /&gt;</span><br><span class="line">			&lt;property name=&quot;javax.persistence.jdbc.password&quot; value=&quot;Mysql123456&quot; /&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;!-- 配置JPA实现产品的基本属性 --&gt;</span><br><span class="line">			&lt;property name=&quot;hibernate.dialect&quot; value=&quot;org.hibernate.dialect.MySQLDialect&quot;/&gt;</span><br><span class="line">			&lt;property name=&quot;hibernate.format_sql&quot; value=&quot;true&quot;/&gt;</span><br><span class="line">			&lt;property name=&quot;hibernate.show_sql&quot; value=&quot;true&quot;/&gt;</span><br><span class="line">			&lt;property name=&quot;hibernate.hbm2ddl.auto&quot; value=&quot;update&quot;/&gt;</span><br><span class="line">		&lt;/properties&gt;</span><br><span class="line">	&lt;/persistence-unit&gt;</span><br><span class="line">&lt;/persistence&gt;</span><br></pre></td></tr></table></figure>
-<p>persistence.xml文件中hibernate.show_sql为true，但是可以通过properties进行修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//persistence.xml文件中persistence-unit标签name属性值</span><br><span class="line">String persistenceUnitName = &quot;JPA&quot;;</span><br><span class="line">Map&lt;String, Object&gt; properties = new HashMap&lt;String, Object&gt;();</span><br><span class="line">properties.put(&quot;hibernate.show_sql&quot;, false);</span><br><span class="line">//1.创建EntitymanagerFactory</span><br><span class="line">EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(persistenceUnitName,properties);</span><br></pre></td></tr></table></figure>
-<p>EntityManagerFactory创建EntityManager时，hibernate.show_sql的值为false，将不在控制台输出SQL</p>
-<p>EntityManagerFactory：<br>EntityManagerFactory 接口主要用来创建 EntityManager实例。该接口约定了如下4个方法：<br>    –createEntityManager()：用于创建实体管理器对象实例。<br>    –createEntityManager(Map map)：用于创建实体管理器对象实例的重载方法，Map 参数用于提供EntityManager的属性。<br>    –isOpen()：检查 EntityManagerFactory是否处于打开状态。实体管理器工厂创建后一直处于打开状态，除非调用close()方法将其关闭。<br>    –close()：关闭EntityManagerFactory。EntityManagerFactory关闭后将释放所有资源，isOpen()方法测试将返回 false，其它方法将不能调用，否则将导致IllegalStateException异常。</p>
-<p>EntityManager是程序操作持久化对象的接口，提供一系列API方法，用于管理持久化对象</p>
-<p>实体对象状态：</p>
+        <h2 id="单例模式-Singleton-Pattern"><a href="#单例模式-Singleton-Pattern" class="headerlink" title="单例模式 Singleton Pattern"></a>单例模式 Singleton Pattern</h2><p>单例模式是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
+<p>单例模式的标准定义如下：</p>
+<p><strong>Ensure a class has only one instance, and provide a global point of access to it.</strong><br>确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。</p>
+<p>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
+<p>注意：</p>
 <ul>
-<li>新建状态：新创建的对象，尚未拥有持久性主键</li>
-<li>持久化状态：已经拥有持久性主键并和持久化建立了上下文环境</li>
-<li>游离状态：拥有持久化主键，但是没有与持久化建立上下文环境</li>
-<li>删除状态：拥有持久化主键，已经和持久化建立上下文环境，但是从数据库中删除</li>
+<li>1、单例类只能有一个实例。</li>
+<li>2、单例类必须自己创建自己的唯一实例。</li>
+<li>3、单例类必须给所有其他对象提供这一实例。</li>
 </ul>
-<p>find (Class<t> entityClass,Object primaryKey)：<br>返回指定的 OID 对应的实体类对象，如果这个实体存在于当前的持久化环境，则返回一个被缓存的对象；否则会创建一个新的 Entity, 并加载数据库中相关信息；若 OID 不存在于数据库中，则返回一个 null。第一个参数为被查询的实体类类型，第二个参数为待查找实体的主键值。</t></p>
-<p>getReference (Class<t> entityClass,Object primaryKey)：<br>与find()方法类似，不同的是：如果缓存中不存在指定的 Entity, EntityManager会创建一个 Entity 类的代理，但是不会立即加载数据库中的信息，只有第一次真正使用此 Entity 的属性才加载，所以如果此 OID 在数据库不存在，getReference() 不会返回 null 值, 而是抛出EntityNotFoundException</t></p>
-<p>persist (Object entity)：<br>用于将新创建的 Entity 纳入到 EntityManager的管理。该方法执行后，传入 persist() 方法的 Entity 对象转换成持久化状态。<br>    – 如果传入 persist() 方法的 Entity 对象已经处于持久化状态，则 persist() 方法什么都不做。<br>    – 如果对删除状态的 Entity 进行 persist() 操作，会转换为持久化状态。<br>    – 如果对游离状态的实体执行 persist() 操作，可能会在 persist() 方法抛出 EntityExistException(也有可能是在flush或事务提交后抛出)。</p>
-<p>remove (Object entity)：<br>删除实例。如果实例是被管理的，即与数据库实体记录关联，则同时会删除关联的数据库记录。</p>
-<p>merge (T entity)：<br>merge() 用于处理 Entity 的同步。即数据库的插入和更新操作</p>
+<p><strong>实现关键</strong>：构造函数是私有的</p>
+<p><strong>单例模式通用代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line"></span><br><span class="line">	private static final Singleton singleton = new Singleton();</span><br><span class="line">	</span><br><span class="line">	private Singleton()&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static Singleton getSingleton() &#123;</span><br><span class="line">		return singleton;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>单例模式的优点</strong></p>
+<ul>
+<li>单例模式在内存中只有一个实例，减少了内存开销，特别是频繁的创建和销毁实例</li>
+<li>单例模式可以避免对资源的多重占用</li>
+</ul>
+<p><strong>单例模式的缺点</strong></p>
+<ul>
+<li>单例模式一般没有接口，不能继承</li>
+<li>单例模式与单一职责原则有冲突</li>
+</ul>
+<p><strong>单例模式使用场景</strong></p>
+<ul>
+<li>要求产生唯一序列号</li>
+<li>需要一个共享访问点或共享数据</li>
+<li>创建一个对象需要消耗的资源过多</li>
+</ul>
+<p><strong>单例模式的注意事项</strong></p>
+<ul>
+<li>高并发情况下，需要注意单例模式的线程同步安全问题</li>
+<li>单例类不能实现 Cloneable 接口，因为复制是不经过构造函数的</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2016/05/30/20160530-JPA API 详解/" data-id="cjl7ru22q005i0i6b9rnx9oni" class="article-share-link">Share</a>
+      <a data-url="http://longxianghome.com/2016/09/08/20160908-单例模式概述/" data-id="cjlc35et2006g7d6b3y8ca2hc" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/">JPA</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/单例模式/">单例模式</a></li></ul>
 
     </footer>
   </div>
@@ -285,14 +142,14 @@
 
 
   
-    <article id="post-20160529-JPA @Transient 注解详解" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-20160810-ZooKeeper Standalones 模式安装" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/29/20160529-JPA @Transient 注解详解/" class="article-date">
-  <time datetime="2016-05-29T12:20:00.000Z" itemprop="datePublished">2016-05-29</time>
+    <a href="/2016/08/10/20160810-ZooKeeper Standalones 模式安装/" class="article-date">
+  <time datetime="2016-08-10T14:49:24.000Z" itemprop="datePublished">2016-08-10</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/JPA/">JPA</a>
+    <a class="article-category-link" href="/categories/ZooKeeper/">ZooKeeper</a>
   </div>
 
   </div>
@@ -303,7 +160,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/29/20160529-JPA @Transient 注解详解/">JPA @Transient 注解详解</a>
+      <a class="article-title" href="/2016/08/10/20160810-ZooKeeper Standalones 模式安装/">ZooKeeper Standalones 模式安装</a>
     </h1>
   
 
@@ -311,20 +168,197 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>@Transient：<br>表示该属性并非一个到数据库表的字段的映射,ORM框架将忽略该属性.<br>如果一个属性并非数据库表的字段映射,就务必将其标示为@Transient,否则,ORM框架默认其注解为@Basic</p>
-<p>当实体对象中有一些独有属性时，可以使用该注解，进行忽略</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@Table(name = &quot;CUSTOMERS&quot;)</span><br><span class="line">@Entity</span><br><span class="line">public class Customer &#123;</span><br><span class="line">	@Column(name = &quot;ID&quot;)</span><br><span class="line">	@GeneratedValue(strategy = GenerationType.AUTO)</span><br><span class="line">	@Id</span><br><span class="line">	private Integer id;</span><br><span class="line">	@Column(name = &quot;Name&quot;)</span><br><span class="line">	private String name;</span><br><span class="line">	@Column(name = &quot;Email&quot;)</span><br><span class="line">	private String email;</span><br><span class="line">	@Column(name = &quot;Age&quot;)</span><br><span class="line">	private int age;</span><br><span class="line">	@Transient</span><br><span class="line">	private String address;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>数据库DDL：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `customers` (</span><br><span class="line">  `ID` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `Age` int(11) DEFAULT NULL,</span><br><span class="line">  `Email` varchar(255) DEFAULT NULL,</span><br><span class="line">  `Name` varchar(255) DEFAULT NULL,</span><br><span class="line">  PRIMARY KEY (`ID`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
-<p>数据库表中不会创建address列</p>
+        <h5 id="ZooKeeper介绍"><a href="#ZooKeeper介绍" class="headerlink" title="ZooKeeper介绍"></a>ZooKeeper介绍</h5><p>在单机中，系统协作大都是进程级的操作。分布式系统中，服务协作都是跨服务器才能完成的。在ZooKeeper之前，我们对于协作服务大都使用消息中间件，随着分布式系统的普及，用消息中间件完成协作，会有大量的程序开发。</p>
+<p>Apache ZooKeeper 是由Apache Hadoop的子项目发展而来，于2010年11月正式成为了Apache的顶级项目。ZooKeeper是一个为分布式应用所设计的分布的、开源的协调服务，它主要是用来解决分布式应用中经常遇到的一些数据管理问题，简化分布式应用协调及其管理的难度，提供高性能的分布式服务。ZooKeeper本身可以以Standalone模式安装运行，不过它的长处在于通过分布式ZooKeeper集群（一个Leader，多个Follower），基于一定的策略来保证ZooKeeper集群的稳定性和可用性，从而实现分布式应用的可靠性。</p>
+<p>ZooKeeper作为分布式协调服务，是不需要依赖于Hadoop的环境，也可以为其他的分布式环境提供服务。</p>
+<h5 id="系统环境（本次环境）"><a href="#系统环境（本次环境）" class="headerlink" title="系统环境（本次环境）"></a>系统环境（本次环境）</h5><p>准备一台Linux服务器，系统要求如下：</p>
+<ul>
+<li>Linux: CentOS 6.5 64bit Server</li>
+<li>Java: 1.7.0_60 64-Bit Server VM</li>
+<li>zookeeper：zookeeper-3.4.5.tar.gz</li>
+</ul>
+<p>ZooKeeper 使用Java语言编写，运行环境需要Java环境支持，建议使用JDK1.6以上版本</p>
+<h5 id="解压-ZooKeeper"><a href="#解压-ZooKeeper" class="headerlink" title="解压 ZooKeeper"></a>解压 ZooKeeper</h5><p>安装目录：/usr/local/zookeeper-3.4.5<br>在 /usr/local/ 目录下解压 zookeeper-3.4.5.tar.gz ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost local]# tar zxvf zookeeper-3.4.5.tar.gz</span><br></pre></td></tr></table></figure></p>
+<h5 id="配置-ZooKeeper"><a href="#配置-ZooKeeper" class="headerlink" title="配置 ZooKeeper"></a>配置 ZooKeeper</h5><h6 id="创建数据目录："><a href="#创建数据目录：" class="headerlink" title="创建数据目录："></a>创建数据目录：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# mkdir /var/zookeeperdata</span><br></pre></td></tr></table></figure>
+<h6 id="准备配置文件："><a href="#准备配置文件：" class="headerlink" title="准备配置文件："></a>准备配置文件：</h6><p>因为ZooKeeper启动时默认加载名为zoo.cfg配置文件，所有需要将zoo_sample.cfg复制一份并命名为zoo.cfg。<br>配置文件目录 zookeeper-3.4.5/conf 。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost conf]# cp zoo_sample.cfg zoo.cfg</span><br></pre></td></tr></table></figure></p>
+<h6 id="编辑配置文件："><a href="#编辑配置文件：" class="headerlink" title="编辑配置文件："></a>编辑配置文件：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost conf]# vim zoo.cfg</span><br></pre></td></tr></table></figure>
+<p>添加数据目录配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dataDir=/var/zookeeperdata</span><br></pre></td></tr></table></figure></p>
+<h6 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vim /etc/profile</span><br></pre></td></tr></table></figure>
+<p>添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export ZOOKEEPER_HOME=/usr/local/zookeeper-3.4.5</span><br><span class="line">export PATH=$PATH:$ZOOKEEPER_HOME/bin:$ZOOKEEPER_HOME/conf</span><br></pre></td></tr></table></figure></p>
+<h5 id="启动-ZooKeeper"><a href="#启动-ZooKeeper" class="headerlink" title="启动 ZooKeeper"></a>启动 ZooKeeper</h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://longxianghome.com/2016/08/10/20160810-ZooKeeper Standalones 模式安装/" data-id="cjlc35et1006c7d6b1f0sdk20" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ZooKeeper/">ZooKeeper</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20160810-CentOS 6.5 64bit 安装 JDK 7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/10/20160810-CentOS 6.5 64bit 安装 JDK 7/" class="article-date">
+  <time datetime="2016-08-10T14:49:24.000Z" itemprop="datePublished">2016-08-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JDK/">JDK</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/10/20160810-CentOS 6.5 64bit 安装 JDK 7/">CentOS 6.5 64bit 安装 JDK 7</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>执行安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# rpm -ivh jdk-7u60-linux-x64.rpm</span><br></pre></td></tr></table></figure>
+<p>配置环境变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#vim /etc/profile</span><br></pre></td></tr></table></figure>
+<p>添加如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#set jdk environment</span><br><span class="line">export JAVA_HOME=/usr/java/jdk1.7.0_60</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://longxianghome.com/2016/08/10/20160810-CentOS 6.5 64bit 安装 JDK 7/" data-id="cjlc35esw005y7d6bl2lprwom" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDK/">JDK</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20160715-MyBatis 二级缓存配置解析过程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/15/20160715-MyBatis 二级缓存配置解析过程/" class="article-date">
+  <time datetime="2016-07-15T12:20:00.000Z" itemprop="datePublished">2016-07-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/MyBatis-原理/">MyBatis 原理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/15/20160715-MyBatis 二级缓存配置解析过程/">MyBatis 二级缓存配置解析过程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>XMLConfigBuilder 是专门用于解析 XML 文件的，直接定位到 mapperElement ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">private void mapperElement(XNode parent) throws Exception &#123;</span><br><span class="line">    if (parent != null) &#123;</span><br><span class="line">      for (XNode child : parent.getChildren()) &#123;</span><br><span class="line">        if (&quot;package&quot;.equals(child.getName())) &#123;</span><br><span class="line">          String mapperPackage = child.getStringAttribute(&quot;name&quot;);</span><br><span class="line">          configuration.addMappers(mapperPackage);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          String resource = child.getStringAttribute(&quot;resource&quot;);</span><br><span class="line">          String url = child.getStringAttribute(&quot;url&quot;);</span><br><span class="line">          String mapperClass = child.getStringAttribute(&quot;class&quot;);</span><br><span class="line">          if (resource != null &amp;&amp; url == null &amp;&amp; mapperClass == null) &#123;</span><br><span class="line">            ErrorContext.instance().resource(resource);</span><br><span class="line">            InputStream inputStream = Resources.getResourceAsStream(resource);</span><br><span class="line">            XMLMapperBuilder mapperParser = new XMLMapperBuilder(inputStream, configuration, resource, configuration.getSqlFragments());</span><br><span class="line">            mapperParser.parse();</span><br><span class="line">          &#125; else if (resource == null &amp;&amp; url != null &amp;&amp; mapperClass == null) &#123;</span><br><span class="line">            ErrorContext.instance().resource(url);</span><br><span class="line">            InputStream inputStream = Resources.getUrlAsStream(url);</span><br><span class="line">            XMLMapperBuilder mapperParser = new XMLMapperBuilder(inputStream, configuration, url, configuration.getSqlFragments());</span><br><span class="line">            mapperParser.parse();</span><br><span class="line">          &#125; else if (resource == null &amp;&amp; url == null &amp;&amp; mapperClass != null) &#123;</span><br><span class="line">            Class&lt;?&gt; mapperInterface = Resources.classForName(mapperClass);</span><br><span class="line">            configuration.addMapper(mapperInterface);</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">            throw new BuilderException(&quot;A mapper element may only specify a url, resource or class, but not more than one.&quot;);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>上述方法主要就是解析 SQL Mapper 映射文件的，根据方法发现最终是调用的 XMLMapperBuilder.parse() 方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public void parse() &#123;</span><br><span class="line">    if (!configuration.isResourceLoaded(resource)) &#123;</span><br><span class="line">      configurationElement(parser.evalNode(&quot;/mapper&quot;));</span><br><span class="line">      configuration.addLoadedResource(resource);</span><br><span class="line">      bindMapperForNamespace();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    parsePendingResultMaps();</span><br><span class="line">    parsePendingChacheRefs();</span><br><span class="line">    parsePendingStatements();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>configurationElement 方法 解析 mapper 内的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">private void configurationElement(XNode context) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">      String namespace = context.getStringAttribute(&quot;namespace&quot;);</span><br><span class="line">      if (namespace == null || namespace.equals(&quot;&quot;)) &#123;</span><br><span class="line">        throw new BuilderException(&quot;Mapper&apos;s namespace cannot be empty&quot;);</span><br><span class="line">      &#125;</span><br><span class="line">      builderAssistant.setCurrentNamespace(namespace);</span><br><span class="line">      cacheRefElement(context.evalNode(&quot;cache-ref&quot;));</span><br><span class="line">      cacheElement(context.evalNode(&quot;cache&quot;));</span><br><span class="line">      parameterMapElement(context.evalNodes(&quot;/mapper/parameterMap&quot;));</span><br><span class="line">      resultMapElements(context.evalNodes(&quot;/mapper/resultMap&quot;));</span><br><span class="line">      sqlElement(context.evalNodes(&quot;/mapper/sql&quot;));</span><br><span class="line">      buildStatementFromContext(context.evalNodes(&quot;select|insert|update|delete&quot;));</span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">      throw new BuilderException(&quot;Error parsing Mapper XML. Cause: &quot; + e, e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>可以发现 cacheRefElement 和 cacheElement 方法是和缓存配置有关系的。</p>
+<p>cacheElement 核心就是解析 cache 标签的各个属性设置值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">private void cacheElement(XNode context) throws Exception &#123;</span><br><span class="line">    if (context != null) &#123;</span><br><span class="line">      String type = context.getStringAttribute(&quot;type&quot;, &quot;PERPETUAL&quot;);</span><br><span class="line">      Class&lt;? extends Cache&gt; typeClass = typeAliasRegistry.resolveAlias(type);</span><br><span class="line">      String eviction = context.getStringAttribute(&quot;eviction&quot;, &quot;LRU&quot;);</span><br><span class="line">      Class&lt;? extends Cache&gt; evictionClass = typeAliasRegistry.resolveAlias(eviction);</span><br><span class="line">      Long flushInterval = context.getLongAttribute(&quot;flushInterval&quot;);</span><br><span class="line">      Integer size = context.getIntAttribute(&quot;size&quot;);</span><br><span class="line">      boolean readWrite = !context.getBooleanAttribute(&quot;readOnly&quot;, false);</span><br><span class="line">      boolean blocking = context.getBooleanAttribute(&quot;blocking&quot;, false);</span><br><span class="line">      Properties props = context.getChildrenAsProperties();</span><br><span class="line">      builderAssistant.useNewCache(typeClass, evictionClass, flushInterval, size, readWrite, blocking, props);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>useNewCache 是最终的解析方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public Cache useNewCache(Class&lt;? extends Cache&gt; typeClass,</span><br><span class="line">      Class&lt;? extends Cache&gt; evictionClass,</span><br><span class="line">      Long flushInterval,</span><br><span class="line">      Integer size,</span><br><span class="line">      boolean readWrite,</span><br><span class="line">      boolean blocking,</span><br><span class="line">      Properties props) &#123;</span><br><span class="line">    typeClass = valueOrDefault(typeClass, PerpetualCache.class);</span><br><span class="line">    evictionClass = valueOrDefault(evictionClass, LruCache.class);</span><br><span class="line">    Cache cache = new CacheBuilder(currentNamespace)</span><br><span class="line">        .implementation(typeClass)</span><br><span class="line">        .addDecorator(evictionClass)</span><br><span class="line">        .clearInterval(flushInterval)</span><br><span class="line">        .size(size)</span><br><span class="line">        .readWrite(readWrite)</span><br><span class="line">        .blocking(blocking)</span><br><span class="line">        .properties(props)</span><br><span class="line">        .build();</span><br><span class="line">    configuration.addCache(cache);</span><br><span class="line">    currentCache = cache;</span><br><span class="line">    return cache;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>从方法中可以看出，如果未配置二级缓存类型，那么默认是 PerpetualCache，使用的算法是 LruCache</p>
+<p>cacheRefElement 就是找到目前 Mapper 配置的缓存而已。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://longxianghome.com/2016/05/29/20160529-JPA @Transient 注解详解/" data-id="cjl7ru22p005f0i6bgzu32d1s" class="article-share-link">Share</a>
+      <a data-url="http://longxianghome.com/2016/07/15/20160715-MyBatis 二级缓存配置解析过程/" data-id="cjlc35esz00697d6blic4xng5" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/">JPA</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20160714-MyBatis 二级缓存概述" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/14/20160714-MyBatis 二级缓存概述/" class="article-date">
+  <time datetime="2016-07-14T12:20:00.000Z" itemprop="datePublished">2016-07-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/MyBatis-原理/">MyBatis 原理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/14/20160714-MyBatis 二级缓存概述/">MyBatis 二级缓存概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MyBatis settings 元素中有个一个配置项：cacheEnabled=true 表示启用 MyBatis 缓存，这里的缓存其实是二级缓存。</p>
+<p>MyBatis settings cacheEnabled 配置信息都在 Configuration 里 ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public Executor newExecutor(Transaction transaction, ExecutorType executorType) &#123;</span><br><span class="line">    executorType = executorType == null ? defaultExecutorType : executorType;</span><br><span class="line">    executorType = executorType == null ? ExecutorType.SIMPLE : executorType;</span><br><span class="line">    Executor executor;</span><br><span class="line">    if (ExecutorType.BATCH == executorType) &#123;</span><br><span class="line">      executor = new BatchExecutor(this, transaction);</span><br><span class="line">    &#125; else if (ExecutorType.REUSE == executorType) &#123;</span><br><span class="line">      executor = new ReuseExecutor(this, transaction);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      executor = new SimpleExecutor(this, transaction);</span><br><span class="line">    &#125;</span><br><span class="line">    if (cacheEnabled) &#123;</span><br><span class="line">      executor = new CachingExecutor(executor);</span><br><span class="line">    &#125;</span><br><span class="line">    executor = (Executor) interceptorChain.pluginAll(executor);</span><br><span class="line">    return executor;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>默认选择 Simle类型的 Executor，可以根据配置的 executorType 选择使用 BatchExecutor 或 ReuseExecutor。</p>
+<p>而如果配置的 cacheEnabled，最终将使用 CachingExecutor 。</p>
+<p>CachingExecutor 是 Executor 一个直接的实现，而 BatchExecutor、ReuseExecutor、SimpleExecutor 都是通过继承 BaseExecutor 间接实现的 Executor。</p>
+<p>CachingExecutor 是装饰模式的一种体现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class CachingExecutor implements Executor &#123;</span><br><span class="line"></span><br><span class="line">  private Executor delegate;</span><br><span class="line">  private TransactionalCacheManager tcm = new TransactionalCacheManager();</span><br><span class="line"></span><br><span class="line">  public CachingExecutor(Executor delegate) &#123;</span><br><span class="line">    this.delegate = delegate;</span><br><span class="line">    delegate.setExecutorWrapper(this);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>需要持有 BatchExecutor、ReuseExecutor、SimpleExecutor 中的一种。</p>
+<p>MyBatis 二级缓存有两种使用方式：</p>
+<ul>
+<li>为每一个 Mapper 分配一个 Cache ，使用 cache 配置</li>
+<li>多个 Mapper 共用一个 Cache，使用 cache-ref 配置</li>
+</ul>
+<p>MyBatis 二级缓存生效条件：</p>
+<ol>
+<li>二级缓存配置总开关需要配置：cacheEnabled = true</li>
+<li>select 语句所在的 Mapper 配置了 cache 或 cache-ref，并且有效</li>
+<li>select 语句配置 useCache = true </li>
+</ol>
+<p>MyBatis 支持三种二级缓存：</p>
+<ol>
+<li>MyBatis 自身默认提供的二级缓存实现：LRU、FIFO、Scheduled 等等</li>
+<li>自定义实现 Cache 接口的缓存</li>
+<li>第三方内存缓存库集成：EHCache 等</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://longxianghome.com/2016/07/14/20160714-MyBatis 二级缓存概述/" data-id="cjlc35esy00657d6b3qyam3un" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
 
     </footer>
   </div>
@@ -337,7 +371,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/24/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/26/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/24/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/26/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -348,7 +382,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CI/">CI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gitflow/">Gitflow</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JDK/">JDK</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JDK-源码-1-7/">JDK 源码 1.7</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JDK-源码-1-8-0-161/">JDK 源码 1.8.0_161</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JIRA/">JIRA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JPA/">JPA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Collections-Framework/">Java Collections Framework</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Concurrent/">Java Concurrent</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Servlet/">Java Servlet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Thread/">Java Thread</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-算法/">Java 算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MyBatis/">MyBatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MyBatis-原理/">MyBatis 原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MyCAT/">MyCAT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Boot/">Spring Boot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Cloud/">Spring Cloud</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Framework/">Spring Framework</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Security/">Spring Security</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-安全/">Web 安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ZooKeeper/">ZooKeeper</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/《Java-核心技术-36-讲》专栏笔记/">《Java 核心技术 36 讲》专栏笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/《深入拆解-Java-虚拟机》专栏笔记/">《深入拆解 Java 虚拟机》专栏笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/《深入理解Java虚拟机》/">《深入理解Java虚拟机》</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工作积累/">工作积累</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/行业知识/">行业知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CI/">CI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gitflow/">Gitflow</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JDK/">JDK</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JDK-源码-1-7/">JDK 源码 1.7</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JDK-源码-1-8-0-161/">JDK 源码 1.8.0_161</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JIRA/">JIRA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JPA/">JPA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Collections-Framework/">Java Collections Framework</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Concurrent/">Java Concurrent</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Servlet/">Java Servlet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Thread/">Java Thread</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-算法/">Java 算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MyBatis/">MyBatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MyBatis-原理/">MyBatis 原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MyCAT/">MyCAT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Boot/">Spring Boot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Boot-源码/">Spring Boot 源码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Cloud/">Spring Cloud</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Framework/">Spring Framework</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Framework-Tutorial/">Spring Framework Tutorial</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Security/">Spring Security</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-安全/">Web 安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ZooKeeper/">ZooKeeper</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/《Java-核心技术-36-讲》专栏笔记/">《Java 核心技术 36 讲》专栏笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/《深入拆解-Java-虚拟机》专栏笔记/">《深入拆解 Java 虚拟机》专栏笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/《深入理解Java虚拟机》/">《深入理解Java虚拟机》</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工作积累/">工作积累</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/行业知识/">行业知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a></li></ul>
     </div>
   </div>
 
@@ -358,7 +392,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArrayList/">ArrayList</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI/">CI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI-持续集成/">CI 持续集成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSRF/">CSRF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Collection/">Collection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Comparable/">Comparable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Comparator/">Comparator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ExceptionHandler/">ExceptionHandler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GS1/">GS1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitflow/">Gitflow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Iterator/">Iterator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK-8/">JDK 8</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JIRA/">JIRA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/">JPA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-Collections-Framework/">Java Collections Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-IO-Framework/">Java IO Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-Thread/">Java Thread</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-虚拟机/">Java 虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java虚拟机/">Java虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jenkins/">Jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyCAT/">MyCAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReentrantLock/">ReentrantLock</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RestTemplate/">RestTemplate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shadowsocks/">Shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sonatype-Nexus/">Sonatype Nexus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Cloud/">Spring Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Framework/">Spring Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Security/">Spring Security</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ThreadLocal/">ThreadLocal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZooKeeper/">ZooKeeper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/冒泡排序/">冒泡排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/包装类/">包装类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单例模式/">单例模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作积累/">工作积累</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工厂模式/">工厂模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/持续集成/">持续集成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插入排序/">插入排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程/">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/适配器模式/">适配器模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/选择排序/">选择排序</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArrayList/">ArrayList</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CAS/">CAS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI/">CI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI-持续集成/">CI 持续集成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSRF/">CSRF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Collection/">Collection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Comparable/">Comparable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Comparator/">Comparator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ExceptionHandler/">ExceptionHandler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GS1/">GS1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitflow/">Gitflow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HashMap/">HashMap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Iterator/">Iterator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK-8/">JDK 8</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JIRA/">JIRA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/">JPA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-Collections-Framework/">Java Collections Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-IO-Framework/">Java IO Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-Thread/">Java Thread</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-虚拟机/">Java 虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java虚拟机/">Java虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jenkins/">Jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LinkedList/">LinkedList</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyCAT/">MyCAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReentrantLock/">ReentrantLock</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RestTemplate/">RestTemplate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shadowsocks/">Shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sonatype-Nexus/">Sonatype Nexus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Cloud/">Spring Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Framework/">Spring Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Security/">Spring Security</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ThreadLocal/">ThreadLocal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZooKeeper/">ZooKeeper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/冒泡排序/">冒泡排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/包装类/">包装类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单例模式/">单例模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作积累/">工作积累</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工厂模式/">工厂模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/持续集成/">持续集成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插入排序/">插入排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程/">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/适配器模式/">适配器模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/选择排序/">选择排序</a></li></ul>
     </div>
   </div>
 
@@ -368,7 +402,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/CI/" style="font-size: 11.82px;">CI</a> <a href="/tags/CI-持续集成/" style="font-size: 10px;">CI 持续集成</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/Collection/" style="font-size: 10px;">Collection</a> <a href="/tags/Comparable/" style="font-size: 10px;">Comparable</a> <a href="/tags/Comparator/" style="font-size: 10px;">Comparator</a> <a href="/tags/ExceptionHandler/" style="font-size: 10px;">ExceptionHandler</a> <a href="/tags/GS1/" style="font-size: 10.91px;">GS1</a> <a href="/tags/Gitflow/" style="font-size: 10px;">Gitflow</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Iterator/" style="font-size: 10px;">Iterator</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/JDK-8/" style="font-size: 12.73px;">JDK 8</a> <a href="/tags/JIRA/" style="font-size: 10px;">JIRA</a> <a href="/tags/JPA/" style="font-size: 17.27px;">JPA</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java-Collections-Framework/" style="font-size: 10px;">Java Collections Framework</a> <a href="/tags/Java-IO-Framework/" style="font-size: 14.55px;">Java IO Framework</a> <a href="/tags/Java-Thread/" style="font-size: 18.18px;">Java Thread</a> <a href="/tags/Java-虚拟机/" style="font-size: 11.82px;">Java 虚拟机</a> <a href="/tags/Java虚拟机/" style="font-size: 10.91px;">Java虚拟机</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MyBatis/" style="font-size: 20px;">MyBatis</a> <a href="/tags/MyCAT/" style="font-size: 10px;">MyCAT</a> <a href="/tags/MySQL/" style="font-size: 16.36px;">MySQL</a> <a href="/tags/Python/" style="font-size: 14.55px;">Python</a> <a href="/tags/Redis/" style="font-size: 10.91px;">Redis</a> <a href="/tags/ReentrantLock/" style="font-size: 10px;">ReentrantLock</a> <a href="/tags/RestTemplate/" style="font-size: 10px;">RestTemplate</a> <a href="/tags/Servlet/" style="font-size: 11.82px;">Servlet</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Sonatype-Nexus/" style="font-size: 10px;">Sonatype Nexus</a> <a href="/tags/Spring-Boot/" style="font-size: 19.09px;">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 16.36px;">Spring Cloud</a> <a href="/tags/Spring-Framework/" style="font-size: 15.45px;">Spring Framework</a> <a href="/tags/Spring-Security/" style="font-size: 13.64px;">Spring Security</a> <a href="/tags/ThreadLocal/" style="font-size: 10px;">ThreadLocal</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/ZooKeeper/" style="font-size: 10px;">ZooKeeper</a> <a href="/tags/冒泡排序/" style="font-size: 10px;">冒泡排序</a> <a href="/tags/包装类/" style="font-size: 10px;">包装类</a> <a href="/tags/单例模式/" style="font-size: 10.91px;">单例模式</a> <a href="/tags/工作积累/" style="font-size: 10.91px;">工作积累</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/持续集成/" style="font-size: 11.82px;">持续集成</a> <a href="/tags/插入排序/" style="font-size: 10px;">插入排序</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/选择排序/" style="font-size: 10px;">选择排序</a>
+      <a href="/tags/ArrayList/" style="font-size: 11px;">ArrayList</a> <a href="/tags/CAS/" style="font-size: 10px;">CAS</a> <a href="/tags/CI/" style="font-size: 12px;">CI</a> <a href="/tags/CI-持续集成/" style="font-size: 10px;">CI 持续集成</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/Collection/" style="font-size: 10px;">Collection</a> <a href="/tags/Comparable/" style="font-size: 10px;">Comparable</a> <a href="/tags/Comparator/" style="font-size: 10px;">Comparator</a> <a href="/tags/ExceptionHandler/" style="font-size: 10px;">ExceptionHandler</a> <a href="/tags/GS1/" style="font-size: 11px;">GS1</a> <a href="/tags/Gitflow/" style="font-size: 10px;">Gitflow</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Iterator/" style="font-size: 10px;">Iterator</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/JDK-8/" style="font-size: 13px;">JDK 8</a> <a href="/tags/JIRA/" style="font-size: 10px;">JIRA</a> <a href="/tags/JPA/" style="font-size: 17px;">JPA</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java-Collections-Framework/" style="font-size: 10px;">Java Collections Framework</a> <a href="/tags/Java-IO-Framework/" style="font-size: 15px;">Java IO Framework</a> <a href="/tags/Java-Thread/" style="font-size: 18px;">Java Thread</a> <a href="/tags/Java-虚拟机/" style="font-size: 12px;">Java 虚拟机</a> <a href="/tags/Java虚拟机/" style="font-size: 11px;">Java虚拟机</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MyBatis/" style="font-size: 20px;">MyBatis</a> <a href="/tags/MyCAT/" style="font-size: 10px;">MyCAT</a> <a href="/tags/MySQL/" style="font-size: 16px;">MySQL</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Redis/" style="font-size: 11px;">Redis</a> <a href="/tags/ReentrantLock/" style="font-size: 10px;">ReentrantLock</a> <a href="/tags/RestTemplate/" style="font-size: 10px;">RestTemplate</a> <a href="/tags/Servlet/" style="font-size: 12px;">Servlet</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Sonatype-Nexus/" style="font-size: 10px;">Sonatype Nexus</a> <a href="/tags/Spring-Boot/" style="font-size: 19px;">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 16px;">Spring Cloud</a> <a href="/tags/Spring-Framework/" style="font-size: 17px;">Spring Framework</a> <a href="/tags/Spring-Security/" style="font-size: 14px;">Spring Security</a> <a href="/tags/ThreadLocal/" style="font-size: 10px;">ThreadLocal</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/ZooKeeper/" style="font-size: 10px;">ZooKeeper</a> <a href="/tags/冒泡排序/" style="font-size: 10px;">冒泡排序</a> <a href="/tags/包装类/" style="font-size: 10px;">包装类</a> <a href="/tags/单例模式/" style="font-size: 11px;">单例模式</a> <a href="/tags/工作积累/" style="font-size: 11px;">工作积累</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/持续集成/" style="font-size: 12px;">持续集成</a> <a href="/tags/插入排序/" style="font-size: 10px;">插入排序</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/选择排序/" style="font-size: 10px;">选择排序</a>
     </div>
   </div>
 
@@ -377,7 +411,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li></ul>
     </div>
   </div>
 

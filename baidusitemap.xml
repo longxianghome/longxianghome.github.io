@@ -4,6 +4,1420 @@
 
     
   <url>
+    <loc>http://longxianghome.com/2016/05/26/20160527-JPA%20@Column%20%E7%9A%84%20columnDefinition%20%E5%B1%9E%E6%80%A7%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-08-27T09:33:16.928Z</lastmod>
+    <data>
+        <display>
+        <title>JPA @Column 的 columnDefinition 属性使用性解</title>
+        <pubTime>2016-05-26T12:20:00.000Z</pubTime>
+        
+        <tag>JPA</tag>
+         
+         
+           
+             
+              <breadCrumb title="JPA" url="http://longxianghome.com/categories/JPA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/05/26/20160526-JPA%20@Column%20%E6%B3%A8%E8%A7%A3%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-08-27T09:32:55.015Z</lastmod>
+    <data>
+        <display>
+        <title>JPA @Column 注解详解</title>
+        <pubTime>2016-05-26T12:20:00.000Z</pubTime>
+        
+        <tag>JPA</tag>
+         
+         
+           
+             
+              <breadCrumb title="JPA" url="http://longxianghome.com/categories/JPA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/06/04/20180604-%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%20Git%20%E8%B4%A6%E5%8F%B7/</loc>
+    <lastmod>2018-08-27T09:31:51.769Z</lastmod>
+    <data>
+        <display>
+        <title>客户端配置多个 Git 账号</title>
+        <pubTime>2018-06-04T15:49:24.000Z</pubTime>
+        
+        <tag>工作积累</tag>
+         
+         
+           
+             
+              <breadCrumb title="工作积累" url="http://longxianghome.com/categories/%E5%B7%A5%E4%BD%9C%E7%A7%AF%E7%B4%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/06/20/20180620-%E4%B8%80%E4%B8%AA%E7%BB%9F%E8%AE%A1%E9%9C%80%E6%B1%82%E7%9A%84%E8%A7%A3%E5%86%B3%E8%BF%87%E7%A8%8B/</loc>
+    <lastmod>2018-08-27T09:31:42.641Z</lastmod>
+    <data>
+        <display>
+        <title>一个统计需求的解决过程</title>
+        <pubTime>2018-06-20T15:49:24.000Z</pubTime>
+        
+        <tag>工作积累</tag>
+         
+         
+           
+             
+              <breadCrumb title="工作积累" url="http://longxianghome.com/categories/%E5%B7%A5%E4%BD%9C%E7%A7%AF%E7%B4%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/08/08/20180808-Spring%20Security%20PasswordEncoder%20%E7%9B%B8%E5%85%B3%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2018-08-27T09:31:24.230Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Security PasswordEncoder 相关源码阅读</title>
+        <pubTime>2018-08-08T15:49:24.000Z</pubTime>
+        
+        <tag>Spring Security</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Security" url="http://longxianghome.com/categories/Spring-Security/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/10/12/20161013-JDK%201.7%20HashMap%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2018-08-27T09:06:48.632Z</lastmod>
+    <data>
+        <display>
+        <title>JDK 1.7 HashMap 源码解析</title>
+        <pubTime>2016-10-12T05:57:24.000Z</pubTime>
+        
+        <tag>HashMap</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java Collections Framework" url="http://longxianghome.com/categories/Java-Collections-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/10/12/20161012-JDK%201.7%20LinkedList%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2018-08-27T08:36:34.629Z</lastmod>
+    <data>
+        <display>
+        <title>JDK 1.7 LinkedList 源码解析</title>
+        <pubTime>2016-10-12T05:57:24.000Z</pubTime>
+        
+        <tag>LinkedList</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java Collections Framework" url="http://longxianghome.com/categories/Java-Collections-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/10/11/20161011-JDK%201.7%20ArrayList%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2018-08-27T08:29:20.732Z</lastmod>
+    <data>
+        <display>
+        <title>JDK 1.7 ArrayList 源码解析</title>
+        <pubTime>2016-10-11T05:57:24.000Z</pubTime>
+        
+        <tag>ArrayList</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java Collections Framework" url="http://longxianghome.com/categories/Java-Collections-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/10/10/20161010-Java%20%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E6%A6%82%E8%BF%B0/</loc>
+    <lastmod>2018-08-27T07:16:04.779Z</lastmod>
+    <data>
+        <display>
+        <title>Java 集合框架概述</title>
+        <pubTime>2016-10-10T05:57:24.000Z</pubTime>
+        
+        <tag>Java Collections Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java Collections Framework" url="http://longxianghome.com/categories/Java-Collections-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/10/24/20161024-Spring%20%3Ccontext:property-placeholder%3E%20%E6%A0%87%E7%AD%BE%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-08-27T07:14:09.201Z</lastmod>
+    <data>
+        <display>
+        <title>Spring <context:property-placeholder> 标签详解</title>
+        <pubTime>2016-10-24T14:49:24.000Z</pubTime>
+        
+        <tag>Spring Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/04/04/20160404-%20Java%20CAS%20%E6%A6%82%E8%BF%B0/</loc>
+    <lastmod>2018-08-27T07:13:04.566Z</lastmod>
+    <data>
+        <display>
+        <title>Java CAS 概述</title>
+        <pubTime>2016-04-04T13:45:00.000Z</pubTime>
+        
+        <tag>CAS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java Concurrent" url="http://longxianghome.com/categories/Java-Concurrent/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/07/10/20160710-MyBatis%20%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0%20/</loc>
+    <lastmod>2018-08-27T06:46:46.229Z</lastmod>
+    <data>
+        <display>
+        <title>MyBatis 架构概述</title>
+        <pubTime>2016-07-10T12:20:00.000Z</pubTime>
+        
+        <tag>MyBatis</tag>
+         
+         
+           
+             
+              <breadCrumb title="MyBatis 原理" url="http://longxianghome.com/categories/MyBatis-%E5%8E%9F%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/07/09/20160709-MyBatis%20XPath/</loc>
+    <lastmod>2018-08-27T06:46:21.636Z</lastmod>
+    <data>
+        <display>
+        <title>MyBatis XPath</title>
+        <pubTime>2016-07-09T13:20:00.000Z</pubTime>
+        
+        <tag>MyBatis</tag>
+         
+         
+           
+             
+              <breadCrumb title="MyBatis 原理" url="http://longxianghome.com/categories/MyBatis-%E5%8E%9F%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/09/17/20170917-MyCAT%20%E5%9F%BA%E4%BA%8E%20MySQL%20master-slave%20%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E9%AA%8C%E8%AF%81/</loc>
+    <lastmod>2018-08-27T06:45:55.424Z</lastmod>
+    <data>
+        <display>
+        <title>Mycat 基于MySQL master-slave 读写分离验证</title>
+        <pubTime>2017-09-17T12:49:24.000Z</pubTime>
+        
+        <tag>MyCAT</tag>
+         
+         
+           
+             
+              <breadCrumb title="MyCAT" url="http://longxianghome.com/categories/MyCAT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/07/08/20160708-MyBatis%20SqlSessionFactory%20%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%20/</loc>
+    <lastmod>2018-08-27T06:45:36.235Z</lastmod>
+    <data>
+        <display>
+        <title>MyBatis SqlSessionFactory 构建过程</title>
+        <pubTime>2016-07-08T11:40:00.000Z</pubTime>
+        
+        <tag>MyBatis</tag>
+         
+         
+           
+             
+              <breadCrumb title="MyBatis 原理" url="http://longxianghome.com/categories/MyBatis-%E5%8E%9F%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/04/20/20170420-Spring%20Framework%20Tutorial%EF%BC%9AEvent%20Handling%20in%20Spring/</loc>
+    <lastmod>2018-08-27T06:16:45.550Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Framework Tutorial：Event Handling in Spring</title>
+        <pubTime>2017-04-20T05:57:24.000Z</pubTime>
+        
+        <tag>Spring Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Framework Tutorial" url="http://longxianghome.com/categories/Spring-Framework-Tutorial/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/04/01/20170401-Spring%20Framework%20Tutorial%EF%BC%9AOverview/</loc>
+    <lastmod>2018-08-27T06:01:14.341Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Framework Tutorial：Overview</title>
+        <pubTime>2017-04-01T05:57:24.000Z</pubTime>
+        
+        <tag>Spring Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Framework Tutorial" url="http://longxianghome.com/categories/Spring-Framework-Tutorial/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/04/02/20170402-Spring%20Framework%20Tutorial%EF%BC%9AArchitecture/</loc>
+    <lastmod>2018-08-27T05:58:56.995Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Framework Tutorial：Architecture</title>
+        <pubTime>2017-04-02T05:57:24.000Z</pubTime>
+        
+        <tag>Spring Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Framework Tutorial" url="http://longxianghome.com/categories/Spring-Framework-Tutorial/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/01/09/20180109-Spring%20Boot%20%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97%E4%B8%83%EF%BC%9A%E6%89%A7%E8%A1%8C%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95%E4%BA%8C/</loc>
+    <lastmod>2018-08-27T05:30:46.743Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 启动源码解析系列七：执行启动方法二</title>
+        <pubTime>2018-01-09T15:22:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot 源码" url="http://longxianghome.com/categories/Spring-Boot-%E6%BA%90%E7%A0%81/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/01/04/20180104-Spring%20Boot%20%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97%E4%BA%8C%EF%BC%9ASpringApplication%20%E5%AE%9E%E4%BE%8B%E5%8C%96%E6%A6%82%E8%BF%B0/</loc>
+    <lastmod>2018-08-27T03:45:23.884Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 启动源码解析系列二：SpringApplication 实例化概述</title>
+        <pubTime>2018-01-04T14:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot 源码" url="http://longxianghome.com/categories/Spring-Boot-%E6%BA%90%E7%A0%81/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/01/03/20180103-Spring%20Boot%20%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%9ASpring%20Boot%20%E5%90%AF%E5%8A%A8%E6%A6%82%E8%BF%B0/</loc>
+    <lastmod>2018-08-27T03:39:47.920Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 启动源码解析系列一：Spring Boot 启动概述</title>
+        <pubTime>2018-01-03T14:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot 源码" url="http://longxianghome.com/categories/Spring-Boot-%E6%BA%90%E7%A0%81/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/01/08/20180108-Spring%20Boot%20%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97%E5%85%AD%EF%BC%9A%E6%89%A7%E8%A1%8C%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95%E4%B8%80/</loc>
+    <lastmod>2018-08-27T03:27:08.387Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 启动源码解析系列六：执行启动方法一</title>
+        <pubTime>2018-01-08T15:22:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot 源码" url="http://longxianghome.com/categories/Spring-Boot-%E6%BA%90%E7%A0%81/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/01/07/20180107-Spring%20Boot%20%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97%E4%BA%94%EF%BC%9A%E6%89%BE%E5%88%B0%E7%A8%8B%E5%BA%8F%E5%85%A5%E5%8F%A3%E7%B1%BB%E5%B9%B6%E5%AE%9E%E4%BE%8B%E5%8C%96/</loc>
+    <lastmod>2018-08-27T02:59:17.150Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 启动源码解析系列五：找到程序入口类并实例化</title>
+        <pubTime>2018-01-07T15:18:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot 源码" url="http://longxianghome.com/categories/Spring-Boot-%E6%BA%90%E7%A0%81/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/01/06/20180106-Spring%20Boot%20%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97%E5%9B%9B%EF%BC%9A%E5%AE%9E%E4%BE%8B%E5%8C%96%20ApplicationListener/</loc>
+    <lastmod>2018-08-27T02:57:55.653Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 启动源码解析系列四：实例化 ApplicationListener</title>
+        <pubTime>2018-01-06T15:15:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot 源码" url="http://longxianghome.com/categories/Spring-Boot-%E6%BA%90%E7%A0%81/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/01/05/20180105-Spring%20Boot%20%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97%E4%B8%89%EF%BC%9A%E5%AE%9E%E4%BE%8B%E5%8C%96%20ApplicationContextInitializer/</loc>
+    <lastmod>2018-08-27T02:56:20.727Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 启动源码解析系列三：实例化 ApplicationContextInitializer</title>
+        <pubTime>2018-01-05T15:05:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot 源码" url="http://longxianghome.com/categories/Spring-Boot-%E6%BA%90%E7%A0%81/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/01/01/20180101-Spring%20Boot%20@SpringBootApplication%20%E6%B3%A8%E8%A7%A3%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-08-27T02:28:33.118Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot @SpringBootApplication 注解详解</title>
+        <pubTime>2018-01-01T09:05:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot 源码" url="http://longxianghome.com/categories/Spring-Boot-%E6%BA%90%E7%A0%81/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/05/30/20170530-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20InputStream%20%E5%92%8C%20OutputStream/</loc>
+    <lastmod>2018-08-27T02:28:06.143Z</lastmod>
+    <data>
+        <display>
+        <title>JDK 1.7 java.io 源码学习之 InputStream 和 OutputStream</title>
+        <pubTime>2017-05-30T05:57:24.000Z</pubTime>
+        
+        <tag>Java IO Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/02/20/20170220-Spring%20Boot%20CommandLineRunner%20%E5%88%9D%E8%AF%86/</loc>
+    <lastmod>2018-08-27T02:28:01.657Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot CommandLineRunner 初识</title>
+        <pubTime>2017-02-20T11:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/02/19/20170219-Spring%20Boot%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/</loc>
+    <lastmod>2018-08-27T02:27:42.553Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 配置文件位置</title>
+        <pubTime>2017-02-19T13:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/02/18/20170218-Spring%20Boot%20profile/</loc>
+    <lastmod>2018-08-27T02:27:28.391Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot profile</title>
+        <pubTime>2017-02-18T11:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/05/29/20170529-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20BufferedInputStream%20%E5%92%8C%20BufferedOutputStream/</loc>
+    <lastmod>2018-08-27T02:26:48.442Z</lastmod>
+    <data>
+        <display>
+        <title>JDK 1.7 java.io 源码学习之 BufferedInputStream 和 BufferedOutputStream</title>
+        <pubTime>2017-05-29T05:57:24.000Z</pubTime>
+        
+        <tag>Java IO Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/05/28/20170528-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20FilterInputStream%20%E5%92%8C%20FilterOutputStream/</loc>
+    <lastmod>2018-08-27T02:26:31.185Z</lastmod>
+    <data>
+        <display>
+        <title>JDK 1.7 java.io 源码学习之 FilterInputStream 和 FilterOutputStream</title>
+        <pubTime>2017-05-28T05:57:24.000Z</pubTime>
+        
+        <tag>Java IO Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/03/04/20170304-%E5%B8%B8%E8%A7%81%E7%9A%84%20Web%20%E6%94%BB%E5%87%BB%20-%20CSRF%20%E6%94%BB%E5%87%BB%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2018-08-27T02:26:15.282Z</lastmod>
+    <data>
+        <display>
+        <title>常见的 Web 攻击 - CSRF 攻击简介</title>
+        <pubTime>2017-03-04T05:57:24.000Z</pubTime>
+        
+        <tag>CSRF</tag>
+         
+         
+           
+             
+              <breadCrumb title="Web 安全" url="http://longxianghome.com/categories/Web-%E5%AE%89%E5%85%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/11/10/20161110-Spring%20Framework%20%E6%A6%82%E8%BF%B0/</loc>
+    <lastmod>2018-08-27T02:25:54.008Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Framework 概述</title>
+        <pubTime>2016-11-10T12:49:24.000Z</pubTime>
+        
+        <tag>Spring Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/11/11/20161111-Spring%20Framework%20HelloWorld/</loc>
+    <lastmod>2018-08-27T02:25:50.507Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Framework HelloWorld</title>
+        <pubTime>2016-11-11T13:49:24.000Z</pubTime>
+        
+        <tag>Spring Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/11/15/20161115-Spring%20Framework%20%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-08-27T02:25:45.195Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Framework 依赖注入详解</title>
+        <pubTime>2016-11-15T12:49:24.000Z</pubTime>
+        
+        <tag>Spring Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/11/17/20161117-Spring%20Framework%20Bean%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <lastmod>2018-08-27T02:25:43.163Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Framework Bean 生命周期</title>
+        <pubTime>2016-11-17T12:49:24.000Z</pubTime>
+        
+        <tag>Spring Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/11/16/20161116-Spring%20Framework%20%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7/</loc>
+    <lastmod>2018-08-27T02:25:40.370Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Framework 依赖注入高级特性</title>
+        <pubTime>2016-11-16T12:49:24.000Z</pubTime>
+        
+        <tag>Spring Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/11/18/20161118-Spring%20Framework%20Beans%20%E7%BB%84%E4%BB%B6/</loc>
+    <lastmod>2018-08-27T02:25:38.390Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Framework Beans 组件</title>
+        <pubTime>2016-11-18T12:49:24.000Z</pubTime>
+        
+        <tag>Spring Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/05/27/20170527-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20ObjectInputStream%20%E5%92%8C%20ObjectOutputStream/</loc>
+    <lastmod>2018-08-27T02:25:27.178Z</lastmod>
+    <data>
+        <display>
+        <title>JDK 1.7 java.io 源码学习之 ObjectInputStream 和 ObjectOutputStream</title>
+        <pubTime>2017-05-27T05:57:24.000Z</pubTime>
+        
+        <tag>Java IO Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/03/03/20170303-%E5%B8%B8%E8%A7%81%E7%9A%84%20Web%20%E6%94%BB%E5%87%BB%20-%20XSS%20%E6%94%BB%E5%87%BB%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2018-08-27T02:25:23.883Z</lastmod>
+    <data>
+        <display>
+        <title>常见的 Web 攻击 - XSS 攻击简介</title>
+        <pubTime>2017-03-03T05:57:24.000Z</pubTime>
+        
+        <tag>XSS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Web 安全" url="http://longxianghome.com/categories/Web-%E5%AE%89%E5%85%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/05/26/20170526-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20Serializable%20%E6%8E%A5%E5%8F%A3/</loc>
+    <lastmod>2018-08-27T02:24:41.481Z</lastmod>
+    <data>
+        <display>
+        <title>JDK 1.7 java.io 源码学习之 Serializable</title>
+        <pubTime>2017-05-26T05:57:24.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/05/25/20170525-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20Closeable%E3%80%81Flushable%E3%80%81Appendable%20%E6%8E%A5%E5%8F%A3/</loc>
+    <lastmod>2018-08-27T02:24:12.614Z</lastmod>
+    <data>
+        <display>
+        <title>JDK 1.7 java.io 源码学习之 Closeable、Flushable、Appendable 接口</title>
+        <pubTime>2017-05-25T05:57:24.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/05/24/20170524-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20AutoCloseable%20%E6%8E%A5%E5%8F%A3%E5%92%8C%20try-with-resource%20%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2018-08-27T02:23:53.264Z</lastmod>
+    <data>
+        <display>
+        <title>JDK 1.7 java.io 源码学习之 AutoCloseable 和 try-with-resources 语法</title>
+        <pubTime>2017-05-24T05:57:24.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/05/23/20170523-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20ByteArrayInputStream%20%E5%92%8C%20ByteArrayOutputStream/</loc>
+    <lastmod>2018-08-27T02:23:42.176Z</lastmod>
+    <data>
+        <display>
+        <title>JDK 1.7 java.io 源码学习之 ByteArrayInputStream 和 ByteArrayOutputStream</title>
+        <pubTime>2017-05-23T05:57:24.000Z</pubTime>
+        
+        <tag>Java IO Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/05/22/20170522-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20FileInputStream%20%E5%92%8C%20FileOutputStream/</loc>
+    <lastmod>2018-08-27T02:23:32.004Z</lastmod>
+    <data>
+        <display>
+        <title>JDK 1.7 java.io 源码学习之 FileInputStream 和 FileOutputStream</title>
+        <pubTime>2017-05-22T05:57:24.000Z</pubTime>
+        
+        <tag>Java IO Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/11/14/20161114-Spring%20Framework%20%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</loc>
+    <lastmod>2018-08-27T02:21:59.549Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Framework 依赖注入</title>
+        <pubTime>2016-11-14T12:49:24.000Z</pubTime>
+        
+        <tag>Spring Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/11/13/20161113-Spring%20Framework%20Bean%20%E5%AE%9E%E4%BE%8B%E5%8C%96/</loc>
+    <lastmod>2018-08-27T02:21:49.936Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Framework Bean 实例化</title>
+        <pubTime>2016-11-13T12:49:24.000Z</pubTime>
+        
+        <tag>Spring Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/11/12/20161112-Spring%20Framework%20Bean%20%E5%91%BD%E5%90%8D/</loc>
+    <lastmod>2018-08-27T02:21:36.554Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Framework Bean 命名</title>
+        <pubTime>2016-11-12T12:49:24.000Z</pubTime>
+        
+        <tag>Spring Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/02/24/20180224-Java%208%20%20%E5%9B%9B%E5%A4%A7%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/</loc>
+    <lastmod>2018-08-27T02:18:10.512Z</lastmod>
+    <data>
+        <display>
+        <title>Java 8 四大内置函数接口使用示例</title>
+        <pubTime>2018-02-24T14:49:24.000Z</pubTime>
+        
+        <tag>JDK 8</tag>
+         
+         
+           
+             
+              <breadCrumb title="JDK" url="http://longxianghome.com/categories/JDK/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/01/12/20180112-Spring%20Boot%20%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2018-08-27T02:18:09.451Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 自动配置原理</title>
+        <pubTime>2018-01-12T10:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot 源码" url="http://longxianghome.com/categories/Spring-Boot-%E6%BA%90%E7%A0%81/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/02/21/20180221-Lambda%20%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/</loc>
+    <lastmod>2018-08-27T02:18:08.268Z</lastmod>
+    <data>
+        <display>
+        <title>Lambda 表达式方法引用</title>
+        <pubTime>2018-02-21T15:49:24.000Z</pubTime>
+        
+        <tag>JDK 8</tag>
+         
+         
+           
+             
+              <breadCrumb title="JDK" url="http://longxianghome.com/categories/JDK/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/01/22/20180122-Spring%20Cloud%20Zuul%20%E9%BB%98%E8%AE%A4%E8%B7%AF%E7%94%B1%E8%A7%84%E5%88%99/</loc>
+    <lastmod>2018-08-27T02:18:07.043Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Cloud Zuul 默认路由规则</title>
+        <pubTime>2018-01-22T15:49:24.000Z</pubTime>
+        
+        <tag>Spring Cloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Cloud" url="http://longxianghome.com/categories/Spring-Cloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/01/23/20180123-Spring%20Cloud%20Zuul%20%E8%B7%AF%E5%BE%84%E5%8C%B9%E9%85%8D/</loc>
+    <lastmod>2018-08-27T02:16:32.833Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Cloud Zuul 路径匹配</title>
+        <pubTime>2018-01-23T15:49:24.000Z</pubTime>
+        
+        <tag>Spring Cloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Cloud" url="http://longxianghome.com/categories/Spring-Cloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/01/21/20180121-Spring%20Cloud%20Zuul%20%E5%88%9D%E8%AF%86/</loc>
+    <lastmod>2018-08-27T02:15:24.669Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Cloud Zuul 初识</title>
+        <pubTime>2018-01-21T13:49:24.000Z</pubTime>
+        
+        <tag>Spring Cloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Cloud" url="http://longxianghome.com/categories/Spring-Cloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/02/20/20180220-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2018-08-27T02:14:59.903Z</lastmod>
+    <data>
+        <display>
+        <title>Lambda表达式语法</title>
+        <pubTime>2018-02-20T14:49:24.000Z</pubTime>
+        
+        <tag>JDK 8</tag>
+         
+         
+           
+             
+              <breadCrumb title="JDK" url="http://longxianghome.com/categories/JDK/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/02/19/20180219-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%BC%95%E5%AD%90/</loc>
+    <lastmod>2018-08-27T02:14:57.600Z</lastmod>
+    <data>
+        <display>
+        <title>Lambda表达式引子</title>
+        <pubTime>2018-02-19T14:49:24.000Z</pubTime>
+        
+        <tag>JDK 8</tag>
+         
+         
+           
+             
+              <breadCrumb title="JDK" url="http://longxianghome.com/categories/JDK/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/02/09/20180209-MySQL%20%E6%9C%AB%E5%B0%BE%E7%A9%BA%E6%A0%BC%E7%9A%84%E6%9F%A5%E8%AF%A2%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-08-27T02:14:11.899Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL 末尾空格的查询问题</title>
+        <pubTime>2018-02-09T14:49:24.000Z</pubTime>
+        
+        <tag>MySQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="MySQL" url="http://longxianghome.com/categories/MySQL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2018/02/08/20180208-MySQL%20You%20can't%20specify%20target%20table%20'x'%20for%20update%20in%20FROM%20clause/</loc>
+    <lastmod>2018-08-27T02:13:55.321Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL You can't specify target table 'x' for update in FROM clause</title>
+        <pubTime>2018-02-08T15:49:24.000Z</pubTime>
+        
+        <tag>MySQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="MySQL" url="http://longxianghome.com/categories/MySQL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/12/28/20171228-Spring%20Boot%20RestTemplate%20GET%20%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-08-27T01:53:09.754Z</lastmod>
+    <data>
+        <display>
+        <title>RestTemplate GET 请求详解</title>
+        <pubTime>2017-12-28T12:40:29.000Z</pubTime>
+        
+        <tag>RestTemplate</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/12/21/20171221-CentOS%206.5%2064bit%20%E5%AE%89%E8%A3%85%20JIRA/</loc>
+    <lastmod>2018-08-27T01:52:46.024Z</lastmod>
+    <data>
+        <display>
+        <title>CentOS 6.5 64bit 安装 JIRA</title>
+        <pubTime>2017-12-21T14:49:24.000Z</pubTime>
+        
+        <tag>JIRA</tag>
+         
+         
+           
+             
+              <breadCrumb title="JIRA" url="http://longxianghome.com/categories/JIRA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/12/22/20171222-Gitflow%20%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
+    <lastmod>2018-08-27T01:52:32.690Z</lastmod>
+    <data>
+        <display>
+        <title>Gitflow 工作流</title>
+        <pubTime>2017-12-22T04:49:24.000Z</pubTime>
+        
+        <tag>Gitflow</tag>
+         
+         
+           
+             
+              <breadCrumb title="Gitflow" url="http://longxianghome.com/categories/Gitflow/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/02/11/20170211-Spring%20Boot%20YAML%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2018-08-27T01:48:41.537Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot YAML 配置文件</title>
+        <pubTime>2017-02-11T14:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/02/10/20170210-Spring%20Boot%20%E7%AE%80%E5%8D%95%E7%89%B9%E6%80%A7/</loc>
+    <lastmod>2018-08-27T01:48:37.826Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 简单特性</title>
+        <pubTime>2017-02-10T11:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/02/12/20170212-Spring%20Boot%20@ConfigurationProperties%20VS%20@Value/</loc>
+    <lastmod>2018-08-27T01:48:35.952Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot @ConfigurationProperties VS @Value</title>
+        <pubTime>2017-02-12T15:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/02/13/20170213-Spring%20Boot%20properties%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2018-08-27T01:48:35.086Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot properties 配置文件</title>
+        <pubTime>2017-02-13T14:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/02/09/20170209-Spring%20Boot%20%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2018-08-27T01:48:33.286Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 代码结构</title>
+        <pubTime>2017-02-09T12:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/02/15/20170215-Spring%20Boot%20%E5%B1%9E%E6%80%A7%E5%A4%96%E7%BD%AE%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2018-08-27T01:48:32.359Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 属性外置配置</title>
+        <pubTime>2017-02-15T14:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/02/08/20170208-Spring%20Boot%20HelloWorld/</loc>
+    <lastmod>2018-08-27T01:48:31.441Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot HelloWorld</title>
+        <pubTime>2017-02-08T10:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2017/02/17/20170217-Spring%20Boot%20%E9%85%8D%E7%BD%AE%E7%B1%BB%E5%92%8C%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2018-08-27T01:45:55.969Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 配置类和自动配置</title>
+        <pubTime>2017-02-17T13:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://longxianghome.com/2016/12/18/20161218-SpringBoot%20%E5%88%9D%E8%AF%86/</loc>
+    <lastmod>2018-08-27T01:23:44.354Z</lastmod>
+    <data>
+        <display>
+        <title>SpringBoot 初识</title>
+        <pubTime>2016-12-18T11:49:24.000Z</pubTime>
+        
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://longxianghome.com/2016/09/10/20160910-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2018-08-24T08:55:59.613Z</lastmod>
     <data>
@@ -190,126 +1604,6 @@
 
     
   <url>
-    <loc>http://longxianghome.com/2017/10/09/20171009-Spring%20Boot%20CommandLineRunner%20%E5%88%9D%E8%AF%86/</loc>
-    <lastmod>2018-08-22T14:38:34.459Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot CommandLineRunner 初识</title>
-        <pubTime>2017-10-09T11:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/01/25/20170125-Spring%20Framework%20Beans%20%E7%BB%84%E4%BB%B6/</loc>
-    <lastmod>2018-08-22T07:28:16.038Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Framework Beans 组件</title>
-        <pubTime>2017-01-25T12:49:24.000Z</pubTime>
-        
-        <tag>Spring Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/01/11/20170111-Spring%20Framework%20%E6%A6%82%E8%BF%B0/</loc>
-    <lastmod>2018-08-21T14:35:55.561Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Framework 概述</title>
-        <pubTime>2017-01-11T12:49:24.000Z</pubTime>
-        
-        <tag>Spring Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/01/17/20170117-Spring%20Framework%20Bean%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
-    <lastmod>2018-08-21T14:25:26.941Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Framework Bean 生命周期</title>
-        <pubTime>2017-01-17T12:49:24.000Z</pubTime>
-        
-        <tag>Spring Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/06/04/20170604-%E5%B8%B8%E8%A7%81%E7%9A%84%20Web%20%E6%94%BB%E5%87%BB%20-%20CSRF%20%E6%94%BB%E5%87%BB%E7%AE%80%E4%BB%8B/</loc>
-    <lastmod>2018-08-21T14:15:49.169Z</lastmod>
-    <data>
-        <display>
-        <title>常见的 Web 攻击 - CSRF 攻击简介</title>
-        <pubTime>2017-06-04T05:57:24.000Z</pubTime>
-        
-        <tag>CSRF</tag>
-         
-         
-           
-             
-              <breadCrumb title="Web 安全" url="http://longxianghome.com/categories/Web-%E5%AE%89%E5%85%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/06/03/20170603-%E5%B8%B8%E8%A7%81%E7%9A%84%20Web%20%E6%94%BB%E5%87%BB%20-%20XSS%20%E6%94%BB%E5%87%BB%E7%AE%80%E4%BB%8B/</loc>
-    <lastmod>2018-08-21T14:02:15.520Z</lastmod>
-    <data>
-        <display>
-        <title>常见的 Web 攻击 - XSS 攻击简介</title>
-        <pubTime>2017-06-03T05:57:24.000Z</pubTime>
-        
-        <tag>XSS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Web 安全" url="http://longxianghome.com/categories/Web-%E5%AE%89%E5%85%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://longxianghome.com/2017/05/21/20170521-VPS%20%E4%B8%AD%E5%AE%89%E8%A3%85%20Shadowsocks/</loc>
     <lastmod>2018-08-21T13:59:52.198Z</lastmod>
     <data>
@@ -330,26 +1624,6 @@
 
     
   <url>
-    <loc>http://longxianghome.com/2018/06/04/20180604-%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%20Git%20%E8%B4%A6%E5%8F%B7/</loc>
-    <lastmod>2018-08-21T12:28:59.026Z</lastmod>
-    <data>
-        <display>
-        <title>客户端配置多个 Git 账号</title>
-        <pubTime>2018-06-04T15:49:24.000Z</pubTime>
-        
-        <tag>工作积累</tag>
-         
-         
-           
-             
-              <breadCrumb title="工作积累" url="http://longxianghome.com/categories/%E5%B7%A5%E4%BD%9C%E7%A7%AF%E7%B4%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://longxianghome.com/2017/03/12/20170312-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
     <lastmod>2018-08-21T11:39:21.608Z</lastmod>
     <data>
@@ -363,66 +1637,6 @@
            
              
               <breadCrumb title="设计模式" url="http://longxianghome.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/03/03/20170303-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20BufferedInputStream%20%E5%92%8C%20BufferedOutputStream/</loc>
-    <lastmod>2018-08-21T11:37:49.015Z</lastmod>
-    <data>
-        <display>
-        <title>JDK 1.7 java.io 源码学习之 BufferedInputStream 和 BufferedOutputStream</title>
-        <pubTime>2017-03-03T05:57:24.000Z</pubTime>
-        
-        <tag>Java IO Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/03/02/20170302-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20FilterInputStream%20%E5%92%8C%20FilterOutputStream/</loc>
-    <lastmod>2018-08-21T10:51:03.668Z</lastmod>
-    <data>
-        <display>
-        <title>JDK 1.7 java.io 源码学习之 FilterInputStream 和 FilterOutputStream</title>
-        <pubTime>2017-03-02T05:57:24.000Z</pubTime>
-        
-        <tag>Java IO Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/02/28/20170228-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20ObjectInputStream%20%E5%92%8C%20ObjectOutputStream/</loc>
-    <lastmod>2018-08-21T10:49:41.038Z</lastmod>
-    <data>
-        <display>
-        <title>JDK 1.7 java.io 源码学习之 ObjectInputStream 和 ObjectOutputStream</title>
-        <pubTime>2017-02-28T05:57:24.000Z</pubTime>
-        
-        <tag>Java IO Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
           
         </display>
     </data>
@@ -454,24 +1668,6 @@
 
     
   <url>
-    <loc>http://longxianghome.com/2017/02/23/20170227-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20Serializable%20%E6%8E%A5%E5%8F%A3/</loc>
-    <lastmod>2018-08-21T10:47:32.802Z</lastmod>
-    <data>
-        <display>
-        <title>JDK 1.7 java.io 源码学习之 Serializable</title>
-        <pubTime>2017-02-23T05:57:24.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://longxianghome.com/2017/02/26/20170226-%20Java%20final%20%E5%85%B3%E9%94%AE%E5%AD%97/</loc>
     <lastmod>2018-08-21T10:46:23.460Z</lastmod>
     <data>
@@ -483,102 +1679,6 @@
            
              
               <breadCrumb title="Java" url="http://longxianghome.com/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/02/24/20170224-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20AutoCloseable%20%E6%8E%A5%E5%8F%A3%E5%92%8C%20try-with-resource%20%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2018-08-21T10:45:58.602Z</lastmod>
-    <data>
-        <display>
-        <title>JDK 1.7 java.io 源码学习之 AutoCloseable 和 try-with-resources 语法</title>
-        <pubTime>2017-02-24T05:57:24.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/02/25/20170225-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20Closeable%E3%80%81Flushable%E3%80%81Appendable%20%E6%8E%A5%E5%8F%A3/</loc>
-    <lastmod>2018-08-21T10:45:53.594Z</lastmod>
-    <data>
-        <display>
-        <title>JDK 1.7 java.io 源码学习之 Closeable、Flushable、Appendable 接口</title>
-        <pubTime>2017-02-25T05:57:24.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/02/23/20170223-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20ByteArrayInputStream%20%E5%92%8C%20ByteArrayOutputStream/</loc>
-    <lastmod>2018-08-21T10:39:04.378Z</lastmod>
-    <data>
-        <display>
-        <title>JDK 1.7 java.io 源码学习之 ByteArrayInputStream 和 ByteArrayOutputStream</title>
-        <pubTime>2017-02-23T05:57:24.000Z</pubTime>
-        
-        <tag>Java IO Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/02/22/20170222-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20FileInputStream%20%E5%92%8C%20FileOutputStream/</loc>
-    <lastmod>2018-08-21T10:39:00.442Z</lastmod>
-    <data>
-        <display>
-        <title>JDK 1.7 java.io 源码学习之 FileInputStream 和 FileOutputStream</title>
-        <pubTime>2017-02-22T05:57:24.000Z</pubTime>
-        
-        <tag>Java IO Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/02/21/20170221-JDK%201.7%20java.io%20%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E4%B9%8B%20InputStream%20%E5%92%8C%20OutputStream/</loc>
-    <lastmod>2018-08-21T10:38:53.680Z</lastmod>
-    <data>
-        <display>
-        <title>JDK 1.7 java.io 源码学习之 InputStream 和 OutputStream</title>
-        <pubTime>2017-02-21T05:57:24.000Z</pubTime>
-        
-        <tag>Java IO Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="JDK 源码 1.7" url="http://longxianghome.com/categories/JDK-%E6%BA%90%E7%A0%81-1-7/"/>
           
         </display>
     </data>
@@ -610,26 +1710,6 @@
 
     
   <url>
-    <loc>http://longxianghome.com/2017/02/07/20170207-MyCAT%20%E5%9F%BA%E4%BA%8E%20MySQL%20master-slave%20%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E9%AA%8C%E8%AF%81/</loc>
-    <lastmod>2018-08-21T10:31:45.026Z</lastmod>
-    <data>
-        <display>
-        <title>Mycat 基于MySQL master-slave 读写分离验证</title>
-        <pubTime>2017-02-07T12:49:24.000Z</pubTime>
-        
-        <tag>MyCAT</tag>
-         
-         
-           
-             
-              <breadCrumb title="MyCAT" url="http://longxianghome.com/categories/MyCAT/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://longxianghome.com/2016/12/28/20161228-CI%20%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA-Maven%20+%20Tomcat%20%E7%AF%87/</loc>
     <lastmod>2018-08-21T10:29:00.429Z</lastmod>
     <data>
@@ -647,26 +1727,6 @@
            
              
               <breadCrumb title="CI" url="http://longxianghome.com/categories/CI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2016/10/14/20161014-Spring%20%3Ccontext:property-placeholder%3E%20%E6%A0%87%E7%AD%BE%E8%AF%A6%E8%A7%A3/</loc>
-    <lastmod>2018-08-21T09:31:23.976Z</lastmod>
-    <data>
-        <display>
-        <title>Spring <context:property-placeholder> 标签详解</title>
-        <pubTime>2016-10-14T14:49:24.000Z</pubTime>
-        
-        <tag>Spring Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
           
         </display>
     </data>
@@ -800,46 +1860,6 @@
         <display>
         <title>JPA @Column 控制浮点数精度</title>
         <pubTime>2016-05-27T12:20:00.000Z</pubTime>
-        
-        <tag>JPA</tag>
-         
-         
-           
-             
-              <breadCrumb title="JPA" url="http://longxianghome.com/categories/JPA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2016/05/26/20180527-JPA%20@Column%20%E7%9A%84%20columnDefinition%20%E5%B1%9E%E6%80%A7%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/</loc>
-    <lastmod>2018-08-21T09:20:54.474Z</lastmod>
-    <data>
-        <display>
-        <title>JPA @Column 的 columnDefinition 属性使用性解</title>
-        <pubTime>2016-05-26T12:20:00.000Z</pubTime>
-        
-        <tag>JPA</tag>
-         
-         
-           
-             
-              <breadCrumb title="JPA" url="http://longxianghome.com/categories/JPA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2016/05/26/20180526-JPA%20@Column%20%E6%B3%A8%E8%A7%A3%E8%AF%A6%E8%A7%A3/</loc>
-    <lastmod>2018-08-21T09:19:33.867Z</lastmod>
-    <data>
-        <display>
-        <title>JPA @Column 注解详解</title>
-        <pubTime>2016-05-26T12:20:00.000Z</pubTime>
         
         <tag>JPA</tag>
          
@@ -1332,66 +2352,6 @@
 
     
   <url>
-    <loc>http://longxianghome.com/2018/08/08/20180808-Spring%20Security%20PasswordEncoder%20%E7%9B%B8%E5%85%B3%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2018-08-21T07:03:21.943Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Security PasswordEncoder 相关源码阅读</title>
-        <pubTime>2018-08-08T15:49:24.000Z</pubTime>
-        
-        <tag>Spring Security</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Security" url="http://longxianghome.com/categories/Spring-Security/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/06/20/20180620-%E4%B8%80%E4%B8%AA%E7%BB%9F%E8%AE%A1%E9%9C%80%E6%B1%82%E7%9A%84%E8%A7%A3%E5%86%B3%E8%BF%87%E7%A8%8B/</loc>
-    <lastmod>2018-08-21T01:50:26.689Z</lastmod>
-    <data>
-        <display>
-        <title>一个统计需求的解决过程</title>
-        <pubTime>2018-06-20T15:49:24.000Z</pubTime>
-        
-        <tag>工作积累</tag>
-         
-         
-           
-             
-              <breadCrumb title="工作积累" url="http://longxianghome.com/categories/%E5%B7%A5%E4%BD%9C%E7%A7%AF%E7%B4%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/04/12/20170412-Java%20%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E6%A6%82%E8%BF%B0/</loc>
-    <lastmod>2018-08-20T06:12:28.705Z</lastmod>
-    <data>
-        <display>
-        <title>Java 集合框架概述</title>
-        <pubTime>2017-04-12T05:57:24.000Z</pubTime>
-        
-        <tag>Java Collections Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java Collections Framework" url="http://longxianghome.com/categories/Java-Collections-Framework/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://longxianghome.com/2016/03/10/20160315-%E7%B1%BB%20ReentrantLock%20%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5/</loc>
     <lastmod>2018-08-19T11:48:59.021Z</lastmod>
     <data>
@@ -1479,9 +2439,9 @@
         <title>Spring Boot 集成 Spring Security</title>
         <pubTime>2017-12-02T13:49:24.000Z</pubTime>
         
-        <tag>Spring Security</tag>
-         
         <tag>Spring Boot</tag>
+         
+        <tag>Spring Security</tag>
          
          
            
@@ -1594,26 +2554,6 @@
 
     
   <url>
-    <loc>http://longxianghome.com/2018/01/11/20180111-Java%208%20%20%E5%9B%9B%E5%A4%A7%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/</loc>
-    <lastmod>2018-08-19T07:28:43.406Z</lastmod>
-    <data>
-        <display>
-        <title>Java 8 四大内置函数接口使用示例</title>
-        <pubTime>2018-01-11T14:49:24.000Z</pubTime>
-        
-        <tag>JDK 8</tag>
-         
-         
-           
-             
-              <breadCrumb title="JDK" url="http://longxianghome.com/categories/JDK/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://longxianghome.com/2015/12/18/20151218-Thread%20%E6%AD%BB%E9%94%81/</loc>
     <lastmod>2018-08-19T04:49:39.285Z</lastmod>
     <data>
@@ -1627,86 +2567,6 @@
            
              
               <breadCrumb title="Java Thread" url="http://longxianghome.com/categories/Java-Thread/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/02/02/20180202-Spring%20Boot%20@ConfigurationProperties%20VS%20@Value/</loc>
-    <lastmod>2018-08-19T04:49:29.541Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot @ConfigurationProperties VS @Value</title>
-        <pubTime>2018-02-02T15:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/02/02/20180202-Spring%20Boot%20properties%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2018-08-19T04:48:27.182Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot properties 配置文件</title>
-        <pubTime>2018-02-02T14:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/02/01/20180201-Spring%20Boot%20YAML%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2018-08-19T04:47:54.320Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot YAML 配置文件</title>
-        <pubTime>2018-02-01T14:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/02/01/20180201-Spring%20Boot%20%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2018-08-19T04:46:51.354Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot 自动配置原理</title>
-        <pubTime>2018-02-01T10:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
           
         </display>
     </data>
@@ -1734,106 +2594,6 @@
 
     
   <url>
-    <loc>http://longxianghome.com/2018/01/11/20180111-Spring%20Cloud%20Zuul%20%E9%BB%98%E8%AE%A4%E8%B7%AF%E7%94%B1%E8%A7%84%E5%88%99/</loc>
-    <lastmod>2018-08-19T04:45:50.059Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Cloud Zuul 默认路由规则</title>
-        <pubTime>2018-01-11T15:49:24.000Z</pubTime>
-        
-        <tag>Spring Cloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Cloud" url="http://longxianghome.com/categories/Spring-Cloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/11/20180111-Spring%20Cloud%20Zuul%20%E5%88%9D%E8%AF%86/</loc>
-    <lastmod>2018-08-19T04:45:46.051Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Cloud Zuul 初识</title>
-        <pubTime>2018-01-11T13:49:24.000Z</pubTime>
-        
-        <tag>Spring Cloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Cloud" url="http://longxianghome.com/categories/Spring-Cloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/11/20180111-Lambda%20%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/</loc>
-    <lastmod>2018-08-19T04:45:41.803Z</lastmod>
-    <data>
-        <display>
-        <title>Lambda 表达式方法引用</title>
-        <pubTime>2018-01-11T15:49:24.000Z</pubTime>
-        
-        <tag>JDK 8</tag>
-         
-         
-           
-             
-              <breadCrumb title="JDK" url="http://longxianghome.com/categories/JDK/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/10/20180110-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2018-08-19T04:45:38.122Z</lastmod>
-    <data>
-        <display>
-        <title>Lambda表达式语法</title>
-        <pubTime>2018-01-10T14:49:24.000Z</pubTime>
-        
-        <tag>JDK 8</tag>
-         
-         
-           
-             
-              <breadCrumb title="JDK" url="http://longxianghome.com/categories/JDK/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/09/20180109-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%BC%95%E5%AD%90/</loc>
-    <lastmod>2018-08-19T04:45:27.773Z</lastmod>
-    <data>
-        <display>
-        <title>Lambda表达式引子</title>
-        <pubTime>2018-01-09T14:49:24.000Z</pubTime>
-        
-        <tag>JDK 8</tag>
-         
-         
-           
-             
-              <breadCrumb title="JDK" url="http://longxianghome.com/categories/JDK/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://longxianghome.com/2017/12/26/20171226-Python%20%E5%AD%97%E5%85%B8/</loc>
     <lastmod>2018-08-19T04:44:52.265Z</lastmod>
     <data>
@@ -1847,26 +2607,6 @@
            
              
               <breadCrumb title="Python" url="http://longxianghome.com/categories/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/08/29/20171218-SpringBoot%20%E5%88%9D%E8%AF%86/</loc>
-    <lastmod>2018-08-19T04:44:35.153Z</lastmod>
-    <data>
-        <display>
-        <title>SpringBoot 初识</title>
-        <pubTime>2017-08-29T11:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
           
         </display>
     </data>
@@ -1914,26 +2654,6 @@
 
     
   <url>
-    <loc>http://longxianghome.com/2017/12/05/20171205-Spring%20Boot%20%E5%B1%9E%E6%80%A7%E5%A4%96%E7%BD%AE%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-08-19T04:43:24.619Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot 属性外置配置</title>
-        <pubTime>2017-12-05T14:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://longxianghome.com/2017/08/01/20170801-Spring%20Security%20%E5%88%9D%E4%BD%93%E9%AA%8C/</loc>
     <lastmod>2018-08-19T04:42:15.684Z</lastmod>
     <data>
@@ -1947,86 +2667,6 @@
            
              
               <breadCrumb title="Spring Security" url="http://longxianghome.com/categories/Spring-Security/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/01/11/20170701-Spring%20Framework%20HelloWorld/</loc>
-    <lastmod>2018-08-19T04:42:00.922Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Framework HelloWorld</title>
-        <pubTime>2017-01-11T13:49:24.000Z</pubTime>
-        
-        <tag>Spring Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/01/14/20170114-Spring%20Framework%20%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</loc>
-    <lastmod>2018-08-19T04:41:35.835Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Framework 依赖注入</title>
-        <pubTime>2017-01-14T12:49:24.000Z</pubTime>
-        
-        <tag>Spring Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/01/12/20170112-Spring%20Framework%20Bean%20%E5%91%BD%E5%90%8D/</loc>
-    <lastmod>2018-08-19T04:41:30.370Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Framework Bean 命名</title>
-        <pubTime>2017-01-12T12:49:24.000Z</pubTime>
-        
-        <tag>Spring Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/01/13/20170113-Spring%20Framework%20Bean%20%E5%AE%9E%E4%BE%8B%E5%8C%96/</loc>
-    <lastmod>2018-08-19T04:41:25.988Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Framework Bean 实例化</title>
-        <pubTime>2017-01-13T12:49:24.000Z</pubTime>
-        
-        <tag>Spring Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
           
         </display>
     </data>
@@ -2314,26 +2954,6 @@
 
     
   <url>
-    <loc>http://longxianghome.com/2018/01/08/20180108-MySQL%20You%20can't%20specify%20target%20table%20'x'%20for%20update%20in%20FROM%20clause/</loc>
-    <lastmod>2018-08-18T15:02:10.412Z</lastmod>
-    <data>
-        <display>
-        <title>MySQL You can't specify target table 'x' for update in FROM clause</title>
-        <pubTime>2018-01-08T15:49:24.000Z</pubTime>
-        
-        <tag>MySQL</tag>
-         
-         
-           
-             
-              <breadCrumb title="MySQL" url="http://longxianghome.com/categories/MySQL/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://longxianghome.com/2017/12/12/20171212-Python%20%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
     <lastmod>2018-08-18T15:01:33.479Z</lastmod>
     <data>
@@ -2476,286 +3096,6 @@
 
     
   <url>
-    <loc>http://longxianghome.com/2018/01/17/20180117-Spring%20Boot%20%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2018-08-18T14:06:59.527Z</lastmod>
-    <data>
-        <display>
-        <title>SpringBoot 使用</title>
-        <pubTime>2018-01-17T11:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/12/20180112-Spring%20Cloud%20Zuul%20%E8%B7%AF%E5%BE%84%E5%8C%B9%E9%85%8D/</loc>
-    <lastmod>2018-08-18T14:06:33.335Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Cloud Zuul 路径匹配</title>
-        <pubTime>2018-01-12T15:49:24.000Z</pubTime>
-        
-        <tag>Spring Cloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Cloud" url="http://longxianghome.com/categories/Spring-Cloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/09/02/20170902-Spring%20Boot%20profile/</loc>
-    <lastmod>2018-08-18T14:06:02.161Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot profile</title>
-        <pubTime>2017-09-02T11:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/01/16/20170116-Spring%20Framework%20%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7/</loc>
-    <lastmod>2018-08-18T14:05:40.851Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Framework 依赖注入高级特性</title>
-        <pubTime>2017-01-16T12:49:24.000Z</pubTime>
-        
-        <tag>Spring Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/02/01/20180201-Spring%20Boot%20@SpringBootApplication%20%E6%B3%A8%E8%A7%A3/</loc>
-    <lastmod>2018-08-18T14:04:38.065Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot @SpringBootApplication 注解</title>
-        <pubTime>2018-02-01T09:05:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/09/02/20170902-Spring%20Boot%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/</loc>
-    <lastmod>2018-08-18T14:02:08.695Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot 配置文件位置</title>
-        <pubTime>2017-09-02T13:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/17/20180117-Spring%20Boot%20%E9%85%8D%E7%BD%AE%E7%B1%BB%E5%92%8C%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-08-18T14:01:51.257Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot 配置类和自动配置</title>
-        <pubTime>2018-01-17T13:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/01/15/20170115-Spring%20Framework%20%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E8%AF%A6%E8%A7%A3/</loc>
-    <lastmod>2018-08-18T14:00:52.639Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Framework 依赖注入详解</title>
-        <pubTime>2017-01-15T12:49:24.000Z</pubTime>
-        
-        <tag>Spring Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Framework" url="http://longxianghome.com/categories/Spring-Framework/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/07/20180107-Spring%20Boot%20%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97%E5%85%AD%EF%BC%9A%E6%89%A7%E8%A1%8C%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2018-08-18T14:00:24.778Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot 启动源码解析系列六：执行启动方法</title>
-        <pubTime>2018-01-07T15:22:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/06/20180106-Spring%20Boot%20%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97%E4%BA%94%EF%BC%9A%E6%89%BE%E5%88%B0%E7%A8%8B%E5%BA%8F%E5%85%A5%E5%8F%A3%E7%B1%BB%E5%B9%B6%E5%AE%9E%E4%BE%8B%E5%8C%96/</loc>
-    <lastmod>2018-08-18T13:59:53.697Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot 启动源码解析系列五：找到程序入口类并实例化</title>
-        <pubTime>2018-01-06T15:18:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/05/20180105-Spring%20Boot%20%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97%E5%9B%9B%EF%BC%9A%E5%AE%9E%E4%BE%8B%E5%8C%96%20ApplicationListener/</loc>
-    <lastmod>2018-08-18T13:59:22.831Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot 启动源码解析系列四：实例化 ApplicationListener</title>
-        <pubTime>2018-01-05T15:15:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/03/20180103-Spring%20Boot%20%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97%E4%BA%8C%EF%BC%9A%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%20Web%20%E7%A8%8B%E5%BA%8F/</loc>
-    <lastmod>2018-08-18T13:58:59.721Z</lastmod>
-    <data>
-        <display>
-        <title>SpringBoot 启动源码解析系列二：判断是否 Web 程序</title>
-        <pubTime>2018-01-03T14:55:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/04/20180104-Spring%20Boot%20%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97%E4%B8%89%EF%BC%9A%E5%AE%9E%E4%BE%8B%E5%8C%96%20ApplicationContextInitializer/</loc>
-    <lastmod>2018-08-18T13:58:41.860Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot 启动源码解析系列三：实例化 ApplicationContextInitializer</title>
-        <pubTime>2018-01-04T15:05:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/02/20180102-Spring%20Boot%20%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%9A%E6%9E%84%E9%80%A0%E5%99%A8%E5%AE%9E%E4%BE%8B%E5%8C%96/</loc>
-    <lastmod>2018-08-18T13:57:45.479Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot 启动源码解析系列一：构造器实例化</title>
-        <pubTime>2018-01-02T14:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://longxianghome.com/2015/09/10/20150910-MyBatis%20%E5%85%A5%E9%97%A8/</loc>
     <lastmod>2018-08-18T13:56:05.940Z</lastmod>
     <data>
@@ -2769,106 +3109,6 @@
            
              
               <breadCrumb title="MyBatis" url="http://longxianghome.com/categories/MyBatis/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/02/01/20180201-Spring%20Boot%20HelloWorld/</loc>
-    <lastmod>2018-08-18T13:54:52.313Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot HelloWorld</title>
-        <pubTime>2018-02-01T10:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/18/20180118-Spring%20Boot%20%E7%AE%80%E5%8D%95%E7%89%B9%E6%80%A7/</loc>
-    <lastmod>2018-08-18T13:52:44.262Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot 简单特性</title>
-        <pubTime>2018-01-18T11:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/17/20180117-Spring%20Boot%20%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2018-08-18T13:51:30.642Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot 代码结构</title>
-        <pubTime>2018-01-17T12:49:24.000Z</pubTime>
-        
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2017/12/28/20171228-RestTemplate%20GET%20%E8%AF%A6%E8%A7%A3/</loc>
-    <lastmod>2018-08-18T13:49:19.227Z</lastmod>
-    <data>
-        <display>
-        <title>RestTemplate GET 请求详解</title>
-        <pubTime>2017-12-28T12:40:29.000Z</pubTime>
-        
-        <tag>RestTemplate</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring Boot" url="http://longxianghome.com/categories/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/08/20180108-MySQL%20%E6%9C%AB%E5%B0%BE%E7%A9%BA%E6%A0%BC%E7%9A%84%E6%9F%A5%E8%AF%A2%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2018-08-18T13:47:01.880Z</lastmod>
-    <data>
-        <display>
-        <title>MySQL 末尾空格的查询问题</title>
-        <pubTime>2018-01-08T14:49:24.000Z</pubTime>
-        
-        <tag>MySQL</tag>
-         
-         
-           
-             
-              <breadCrumb title="MySQL" url="http://longxianghome.com/categories/MySQL/"/>
           
         </display>
     </data>
@@ -2978,46 +3218,6 @@
 
     
   <url>
-    <loc>http://longxianghome.com/2017/12/28/20171228-Gitflow%20%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
-    <lastmod>2018-08-18T13:27:56.203Z</lastmod>
-    <data>
-        <display>
-        <title>Gitflow 工作流</title>
-        <pubTime>2017-12-28T04:49:24.000Z</pubTime>
-        
-        <tag>Gitflow</tag>
-         
-         
-           
-             
-              <breadCrumb title="Gitflow" url="http://longxianghome.com/categories/Gitflow/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2018/01/01/20180101-CentOS%206.5%2064bit%20%E5%AE%89%E8%A3%85%20JIRA/</loc>
-    <lastmod>2018-08-18T13:23:49.700Z</lastmod>
-    <data>
-        <display>
-        <title>CentOS 6.5 64bit 安装 JIRA</title>
-        <pubTime>2018-01-01T14:49:24.000Z</pubTime>
-        
-        <tag>JIRA</tag>
-         
-         
-           
-             
-              <breadCrumb title="JIRA" url="http://longxianghome.com/categories/JIRA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://longxianghome.com/2016/08/10/20160810-CentOS%206.5%2064bit%20%E5%AE%89%E8%A3%85%20JDK%207/</loc>
     <lastmod>2018-08-18T13:23:22.352Z</lastmod>
     <data>
@@ -3071,66 +3271,6 @@
            
              
               <breadCrumb title="Spring Security" url="http://longxianghome.com/categories/Spring-Security/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2016/04/29/20160429-MyBatis%20XPath/</loc>
-    <lastmod>2018-08-18T13:02:20.720Z</lastmod>
-    <data>
-        <display>
-        <title>MyBatis XPath</title>
-        <pubTime>2016-04-29T13:20:00.000Z</pubTime>
-        
-        <tag>MyBatis</tag>
-         
-         
-           
-             
-              <breadCrumb title="MyBatis 原理" url="http://longxianghome.com/categories/MyBatis-%E5%8E%9F%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2016/04/29/20160429-MyBatis%20%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0%20/</loc>
-    <lastmod>2018-08-18T12:46:21.019Z</lastmod>
-    <data>
-        <display>
-        <title>MyBatis 架构概述</title>
-        <pubTime>2016-04-29T12:20:00.000Z</pubTime>
-        
-        <tag>MyBatis</tag>
-         
-         
-           
-             
-              <breadCrumb title="MyBatis 原理" url="http://longxianghome.com/categories/MyBatis-%E5%8E%9F%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://longxianghome.com/2016/04/28/20160428-MyBatis%20SqlSessionFactory%20%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%20/</loc>
-    <lastmod>2018-08-18T12:25:28.729Z</lastmod>
-    <data>
-        <display>
-        <title>MyBatis SqlSessionFactory 构建过程</title>
-        <pubTime>2016-04-28T11:40:00.000Z</pubTime>
-        
-        <tag>MyBatis</tag>
-         
-         
-           
-             
-              <breadCrumb title="MyBatis 原理" url="http://longxianghome.com/categories/MyBatis-%E5%8E%9F%E7%90%86/"/>
           
         </display>
     </data>
