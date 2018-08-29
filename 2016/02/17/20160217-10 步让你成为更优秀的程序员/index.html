@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="英文原文：10 steps to becoming a better programmer 永远不要复制代码不惜任何代价避免重复的代码。如果一个常用的代码片段出现在了程序中的几个不同地方，重构它，把它放到一个自己的函数里。重复的代码会导致你的同事在读你的代码时产生困惑。而重复的代码如果在一个地方修改，在另外一个地方忘记修改，就会产生到处是bug，它还会使你的代码体积变得臃肿。现代的编程语言提供了很">
+<meta name="description" content="永远不要复制代码 留意你开始分心的时候 不要匆忙赶任务而放弃原则 测试你完成的代码 代码审查 让代码更少 为优雅的代码而努力 编写不言自明的代码 不要使用纯数字 不要做手工劳动 避免过早优化   英文原文：10 steps to becoming a better programmer 永远不要复制代码不惜任何代价避免重复的代码。如果一个常用的代码片段出现在了程序中的几个不同地方，重构它，把它">
 <meta name="keywords" content="编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="10 步让你成为更优秀的程序员">
 <meta property="og:url" content="http://longxianghome.com/2016/02/17/20160217-10 步让你成为更优秀的程序员/index.html">
 <meta property="og:site_name" content="记录 总结 思考 成长">
-<meta property="og:description" content="英文原文：10 steps to becoming a better programmer 永远不要复制代码不惜任何代价避免重复的代码。如果一个常用的代码片段出现在了程序中的几个不同地方，重构它，把它放到一个自己的函数里。重复的代码会导致你的同事在读你的代码时产生困惑。而重复的代码如果在一个地方修改，在另外一个地方忘记修改，就会产生到处是bug，它还会使你的代码体积变得臃肿。现代的编程语言提供了很">
+<meta property="og:description" content="永远不要复制代码 留意你开始分心的时候 不要匆忙赶任务而放弃原则 测试你完成的代码 代码审查 让代码更少 为优雅的代码而努力 编写不言自明的代码 不要使用纯数字 不要做手工劳动 避免过早优化   英文原文：10 steps to becoming a better programmer 永远不要复制代码不惜任何代价避免重复的代码。如果一个常用的代码片段出现在了程序中的几个不同地方，重构它，把它">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-18T14:59:03.460Z">
+<meta property="og:updated_time" content="2018-08-28T02:43:19.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="10 步让你成为更优秀的程序员">
-<meta name="twitter:description" content="英文原文：10 steps to becoming a better programmer 永远不要复制代码不惜任何代价避免重复的代码。如果一个常用的代码片段出现在了程序中的几个不同地方，重构它，把它放到一个自己的函数里。重复的代码会导致你的同事在读你的代码时产生困惑。而重复的代码如果在一个地方修改，在另外一个地方忘记修改，就会产生到处是bug，它还会使你的代码体积变得臃肿。现代的编程语言提供了很">
+<meta name="twitter:description" content="永远不要复制代码 留意你开始分心的时候 不要匆忙赶任务而放弃原则 测试你完成的代码 代码审查 让代码更少 为优雅的代码而努力 编写不言自明的代码 不要使用纯数字 不要做手工劳动 避免过早优化   英文原文：10 steps to becoming a better programmer 永远不要复制代码不惜任何代价避免重复的代码。如果一个常用的代码片段出现在了程序中的几个不同地方，重构它，把它">
 
 
 
@@ -327,7 +327,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,538
+                  1,623
                 </span>
               
 
@@ -364,7 +364,22 @@
       
 
       
-        <p>英文原文：<a href="https://wildbunny.co.uk/blog/2012/11/01/10-steps-to-becoming-a-better-programmer/" target="_blank" rel="noopener">10 steps to becoming a better programmer</a></p>
+        <!-- TOC -->
+<ul>
+<li><a href="#永远不要复制代码">永远不要复制代码</a></li>
+<li><a href="#留意你开始分心的时候">留意你开始分心的时候</a></li>
+<li><a href="#不要匆忙赶任务而放弃原则">不要匆忙赶任务而放弃原则</a></li>
+<li><a href="#测试你完成的代码">测试你完成的代码</a></li>
+<li><a href="#代码审查">代码审查</a></li>
+<li><a href="#让代码更少">让代码更少</a></li>
+<li><a href="#为优雅的代码而努力">为优雅的代码而努力</a></li>
+<li><a href="#编写不言自明的代码">编写不言自明的代码</a></li>
+<li><a href="#不要使用纯数字">不要使用纯数字</a></li>
+<li><a href="#不要做手工劳动">不要做手工劳动</a></li>
+<li><a href="#避免过早优化">避免过早优化</a></li>
+</ul>
+<!-- /TOC -->
+<p>英文原文：<a href="https://wildbunny.co.uk/blog/2012/11/01/10-steps-to-becoming-a-better-programmer/" target="_blank" rel="noopener">10 steps to becoming a better programmer</a></p>
 <h5><span id="永远不要复制代码">永远不要复制代码</span></h5><p>不惜任何代价避免重复的代码。如果一个常用的代码片段出现在了程序中的几个不同地方，重构它，把它放到一个自己的函数里。重复的代码会导致你的同事在读你的代码时产生困惑。而重复的代码如果在一个地方修改，在另外一个地方忘记修改，就会产生到处是bug，它还会使你的代码体积变得臃肿。现代的编程语言提供了很好的方法来解决这些问题，例如，下面这个问题在以前很难解决，而如今使用lambdas却很好实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 一些函数含有部分重复代码</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">void OriginalA()</span><br><span class="line">&#123;</span><br><span class="line">	DoThingsA();</span><br><span class="line"></span><br><span class="line">	// unique code</span><br><span class="line"></span><br><span class="line">	DoThingsB();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 另外一个含有部分重复代码的函数</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">void OriginalB()</span><br><span class="line">&#123;</span><br><span class="line">	DoThingsA();</span><br><span class="line"></span><br><span class="line">	// 没有重复的代码</span><br><span class="line"></span><br><span class="line">	DoThingsB();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>现在我们重构含有部分相同代码的函数，用delegate模式重写它们：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// Encapsulate shared functionality</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">/// &lt;param name=&quot;action&quot;&gt;User defined action&lt;/param&gt;</span><br><span class="line">void UniqueWrapper(Action action)</span><br><span class="line">&#123;</span><br><span class="line">	DoThingsA();</span><br><span class="line"></span><br><span class="line">	action();</span><br><span class="line"></span><br><span class="line">	DoThingsB();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// New implmentation of A</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">void NewA()</span><br><span class="line">&#123;</span><br><span class="line">	UniqueWrapper(() =&gt;</span><br><span class="line">	&#123;</span><br><span class="line">		// unique code</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// New implementation of B</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">void NewB()</span><br><span class="line">&#123;</span><br><span class="line">	UniqueWrapper(() =&gt;</span><br><span class="line">	&#123;</span><br><span class="line">		// unique code</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h5><span id="留意你开始分心的时候">留意你开始分心的时候</span></h5><p>当你发现自己在浏览facebook或微博、而不是在解决问题，这通常是一种你需要短暂休息的信号。离开办公桌，去喝一杯咖啡，或去跟同事聊5分钟。尽管这样做看起来有点反直觉，但长久去看，它会提高你的工作效率。</p>
@@ -420,8 +435,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/03/20160303- Thread 等待和通知机制/" rel="prev" title="Thread 等待和通知机制">
-                Thread 等待和通知机制 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/02/18/20160218-Spring MVC 入门/" rel="prev" title="Spring MVC 入门">
+                Spring MVC 入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -509,7 +524,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">191</span>
+                  <span class="site-state-item-count">218</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -520,7 +535,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -531,7 +546,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -598,7 +613,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">132.2k</span>
+    <span title="Site words total count">148.5k</span>
   
 </div>
 
