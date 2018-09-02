@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="记录 总结 思考 成长">
 <meta property="og:description" content="Redis 实现分布式锁简单版 获取锁  最简单的方法是使用 SETNX 命令，SETNX 命令的特点是当缓存里 key 不存在时，才会去 set，否则直接返回 false。如果返回 true 则获取锁，否则获取锁失败。 key 是锁的唯一标识，可以是业务方法名称，value 可以是某个数值，例如： 1SETNX key 1  释放锁  当程序执行完毕后，必须释放锁，最简单的命令是使用 DEL 命">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-02T12:41:05.404Z">
+<meta property="og:updated_time" content="2018-09-02T14:08:15.892Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis 实现分布式锁">
 <meta name="twitter:description" content="Redis 实现分布式锁简单版 获取锁  最简单的方法是使用 SETNX 命令，SETNX 命令的特点是当缓存里 key 不存在时，才会去 set，否则直接返回 false。如果返回 true 则获取锁，否则获取锁失败。 key 是锁的唯一标识，可以是业务方法名称，value 可以是某个数值，例如： 1SETNX key 1  释放锁  当程序执行完毕后，必须释放锁，最简单的命令是使用 DEL 命">
