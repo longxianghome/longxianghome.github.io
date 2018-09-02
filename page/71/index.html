@@ -230,7 +230,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://longxianghome.com/2015/07/29/20150729-MyBatis 多表查询一/">
+    <link itemprop="mainEntityOfPage" href="http://longxianghome.com/2015/09/14/20150914-MyBatis XML 配置文件 properties 元素/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="longxiang">
@@ -249,7 +249,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/07/29/20150729-MyBatis 多表查询一/" itemprop="url">MyBatis 多表查询一</a></h1>
+                <a class="post-title-link" href="/2015/09/14/20150914-MyBatis XML 配置文件 properties 元素/" itemprop="url">MyBatis XML 配置文件 properties 元素</a></h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-29T19:49:24+08:00">
-                2015-07-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-14T20:00:00+08:00">
+                2015-09-14
               </time>
             
 
@@ -302,9 +302,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2015/07/29/20150729-MyBatis 多表查询一/#comments" itemprop="discussionUrl">
+                <a href="/2015/09/14/20150914-MyBatis XML 配置文件 properties 元素/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2015/07/29/20150729-MyBatis 多表查询一/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/09/14/20150914-MyBatis XML 配置文件 properties 元素/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -326,7 +326,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  413
+                  515
                 </span>
               
 
@@ -365,11 +365,18 @@
       
         
           
-          1.实体类Order对应主表，OrderDetail对应明细表123456789101112131415public class Order &#123;	private Integer id;	private String orderCode;	private String name;	priva
+          properties 元素是用于配置属性的，比如 JDBC 连接信息， MyBatis 提供三种配置方式：
+
+property 子元素
+properties 配置文件
+代码参数传递
+
+properties 配置文件
+properties 配置文件就是将需要的配置信息单独存放于一个 propertie
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2015/07/29/20150729-MyBatis 多表查询一/#more" rel="contents">
+            <a class="btn" href="/2015/09/14/20150914-MyBatis XML 配置文件 properties 元素/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -420,7 +427,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://longxianghome.com/2015/07/28/20150728-MyBatis 新增和更新/">
+    <link itemprop="mainEntityOfPage" href="http://longxianghome.com/2015/09/13/20150913-MyBatis XML 配置文件概述/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="longxiang">
@@ -439,7 +446,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/07/28/20150728-MyBatis 新增和更新/" itemprop="url">MyBatis 新增和更新</a></h1>
+                <a class="post-title-link" href="/2015/09/13/20150913-MyBatis XML 配置文件概述/" itemprop="url">MyBatis XML 配置文件概述</a></h1>
         
 
         <div class="post-meta">
@@ -451,8 +458,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-28T19:49:24+08:00">
-                2015-07-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-13T20:00:00+08:00">
+                2015-09-13
               </time>
             
 
@@ -492,9 +499,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2015/07/28/20150728-MyBatis 新增和更新/#comments" itemprop="discussionUrl">
+                <a href="/2015/09/13/20150913-MyBatis XML 配置文件概述/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2015/07/28/20150728-MyBatis 新增和更新/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/09/13/20150913-MyBatis XML 配置文件概述/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -516,7 +523,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  436
+                  217
                 </span>
               
 
@@ -532,7 +539,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  1
                 </span>
               
             </div>
@@ -555,11 +562,13 @@
       
         
           
-          1.xml文件123456789101112131415161718192021&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;  &lt;!DOCTYPE mapper PUBLIC &quot;-//ibatis.
+          MyBatis XML 配置文件内容比较多，准备按不同的元素分别分析，这里先做一个概述。
+MyBatis XML 配置文件层次结构：
+1234567891011121314151617181920212223&lt;?xml version=&quot;1.0&quot; encoding=&quo
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2015/07/28/20150728-MyBatis 新增和更新/#more" rel="contents">
+            <a class="btn" href="/2015/09/13/20150913-MyBatis XML 配置文件概述/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -610,7 +619,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://longxianghome.com/2015/07/27/20150727-MyBatis 删除/">
+    <link itemprop="mainEntityOfPage" href="http://longxianghome.com/2015/09/12/20150912-MyBatis 生命周期/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="longxiang">
@@ -629,7 +638,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/07/27/20150727-MyBatis 删除/" itemprop="url">MyBatis 删除</a></h1>
+                <a class="post-title-link" href="/2015/09/12/20150912-MyBatis 生命周期/" itemprop="url">MyBatis 生命周期</a></h1>
         
 
         <div class="post-meta">
@@ -641,8 +650,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-27T19:49:24+08:00">
-                2015-07-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-12T20:00:00+08:00">
+                2015-09-12
               </time>
             
 
@@ -682,9 +691,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2015/07/27/20150727-MyBatis 删除/#comments" itemprop="discussionUrl">
+                <a href="/2015/09/12/20150912-MyBatis 生命周期/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2015/07/27/20150727-MyBatis 删除/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/09/12/20150912-MyBatis 生命周期/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -706,7 +715,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  324
+                  255
                 </span>
               
 
@@ -722,7 +731,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -745,11 +754,13 @@
       
         
           
-          1.xml文件foreach标签拼接in条件12345678910111213141516171819&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;  &lt;!DOCTYPE mapper PUBLIC &quot
+          MyBatis 生命周期其实就是几个组件的生命周期。
+SqlSessionFactoryBuilderSqlSessionFactoryBuilder 通过 XML 或者 Java 代码中的配置信息来构建 SqlSessionFactory。
+其作用就是构建 SqlSessionFactory，一
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2015/07/27/20150727-MyBatis 删除/#more" rel="contents">
+            <a class="btn" href="/2015/09/12/20150912-MyBatis 生命周期/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -791,7 +802,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/70/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><span class="page-number current">71</span><a class="page-number" href="/page/72/">72</a><a class="page-number" href="/page/73/">73</a><a class="extend next" rel="next" href="/page/72/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/70/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><span class="page-number current">71</span><a class="page-number" href="/page/72/">72</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/72/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -837,7 +848,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">218</span>
+                  <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -848,7 +859,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -859,7 +870,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -910,7 +921,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">148.5k</span>
+    <span title="Site words total count">154.7k</span>
   
 </div>
 

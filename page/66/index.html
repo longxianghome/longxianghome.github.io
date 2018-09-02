@@ -230,7 +230,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://longxianghome.com/2015/09/25/20150925-MyBatis SQL Mapper 文件概述/">
+    <link itemprop="mainEntityOfPage" href="http://longxianghome.com/2015/12/15/20151215-Thread 对象锁重入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="longxiang">
@@ -249,7 +249,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/09/25/20150925-MyBatis SQL Mapper 文件概述/" itemprop="url">MyBatis SQL Mapper 文件概述</a></h1>
+                <a class="post-title-link" href="/2015/12/15/20151215-Thread 对象锁重入/" itemprop="url">Thread 对象锁重入</a></h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-25T19:30:00+08:00">
-                2015-09-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-15T20:38:00+08:00">
+                2015-12-15
               </time>
             
 
@@ -284,8 +284,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MyBatis/" itemprop="url" rel="index">
-                    <span itemprop="name">MyBatis</span>
+                  <a href="/categories/Java-Thread/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Thread</span>
                   </a>
                 </span>
 
@@ -302,9 +302,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2015/09/25/20150925-MyBatis SQL Mapper 文件概述/#comments" itemprop="discussionUrl">
+                <a href="/2015/12/15/20151215-Thread 对象锁重入/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2015/09/25/20150925-MyBatis SQL Mapper 文件概述/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/12/15/20151215-Thread 对象锁重入/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -326,7 +326,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  149
+                  348
                 </span>
               
 
@@ -342,7 +342,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -365,16 +365,13 @@
       
         
           
-          MyBatis 正是因为提供了非常强大的 SQL Mapper 才使其大受欢迎。
-SQL 映射文件有几个顶级元素（按照它们应该被定义的顺序）：
-
-cache – 给定命名空间的缓存配置。
-cache-ref – 其他命名空间缓存配置的引用。
-resultMap – 是最复杂也是最强大的元素，用来描述
+          在 Thread 锁对象示例中提到 获取到锁，即获取了该对象同步的独占权，那么就带了一个锁重入现象：
+当一个线程得到某个对象的锁，再次请求次对象锁时是可以再次获取对象的锁
+1234567891011121314151617181920212223public class MyObject &#123
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2015/09/25/20150925-MyBatis SQL Mapper 文件概述/#more" rel="contents">
+            <a class="btn" href="/2015/12/15/20151215-Thread 对象锁重入/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -425,7 +422,7 @@ resultMap – 是最复杂也是最强大的元素，用来描述
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://longxianghome.com/2015/09/19/20150919-MyBatis XML 配置文件 mappers 元素/">
+    <link itemprop="mainEntityOfPage" href="http://longxianghome.com/2015/12/14/20151214-Thread 锁对象示例/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="longxiang">
@@ -444,7 +441,7 @@ resultMap – 是最复杂也是最强大的元素，用来描述
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/09/19/20150919-MyBatis XML 配置文件 mappers 元素/" itemprop="url">MyBatis XML 配置文件 mappers 元素</a></h1>
+                <a class="post-title-link" href="/2015/12/14/20151214-Thread 锁对象示例/" itemprop="url">Thread 锁对象示例</a></h1>
         
 
         <div class="post-meta">
@@ -456,8 +453,8 @@ resultMap – 是最复杂也是最强大的元素，用来描述
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-19T20:30:00+08:00">
-                2015-09-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-14T23:10:00+08:00">
+                2015-12-14
               </time>
             
 
@@ -479,8 +476,8 @@ resultMap – 是最复杂也是最强大的元素，用来描述
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MyBatis/" itemprop="url" rel="index">
-                    <span itemprop="name">MyBatis</span>
+                  <a href="/categories/Java-Thread/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Thread</span>
                   </a>
                 </span>
 
@@ -497,9 +494,9 @@ resultMap – 是最复杂也是最强大的元素，用来描述
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2015/09/19/20150919-MyBatis XML 配置文件 mappers 元素/#comments" itemprop="discussionUrl">
+                <a href="/2015/12/14/20151214-Thread 锁对象示例/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2015/09/19/20150919-MyBatis XML 配置文件 mappers 元素/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/12/14/20151214-Thread 锁对象示例/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -521,7 +518,7 @@ resultMap – 是最复杂也是最强大的元素，用来描述
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  191
+                  858
                 </span>
               
 
@@ -537,7 +534,7 @@ resultMap – 是最复杂也是最强大的元素，用来描述
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -560,12 +557,11 @@ resultMap – 是最复杂也是最强大的元素，用来描述
       
         
           
-          mappers 是为了告诉 MyBatis SQL 映射文件所在位置，可参考官网文档说明，默认提供如下四种方式：
-123456&lt;!-- 使用相对于类路径的资源引用 --&gt;&lt;mappers&gt;  &lt;mapper resource=&quot;org/mybatis/buil
+          公共对象：123456789101112public class MyObject &#123;	public void methodA() &#123;		System.out.println(&quot;begin methodA threadName=&quot; + Thread.curre
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2015/09/19/20150919-MyBatis XML 配置文件 mappers 元素/#more" rel="contents">
+            <a class="btn" href="/2015/12/14/20151214-Thread 锁对象示例/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -616,7 +612,7 @@ resultMap – 是最复杂也是最强大的元素，用来描述
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://longxianghome.com/2015/09/18/20150918-MyBatis XML 配置文件 environments 元素/">
+    <link itemprop="mainEntityOfPage" href="http://longxianghome.com/2015/12/13/20151213-Thread 同步问题示例/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="longxiang">
@@ -635,7 +631,7 @@ resultMap – 是最复杂也是最强大的元素，用来描述
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/09/18/20150918-MyBatis XML 配置文件 environments 元素/" itemprop="url">MyBatis XML 配置文件 environments 元素</a></h1>
+                <a class="post-title-link" href="/2015/12/13/20151213-Thread 同步问题示例/" itemprop="url">Thread 同步问题示例</a></h1>
         
 
         <div class="post-meta">
@@ -647,8 +643,8 @@ resultMap – 是最复杂也是最强大的元素，用来描述
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-18T22:00:00+08:00">
-                2015-09-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-13T21:26:00+08:00">
+                2015-12-13
               </time>
             
 
@@ -670,8 +666,8 @@ resultMap – 是最复杂也是最强大的元素，用来描述
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MyBatis/" itemprop="url" rel="index">
-                    <span itemprop="name">MyBatis</span>
+                  <a href="/categories/Java-Thread/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Thread</span>
                   </a>
                 </span>
 
@@ -688,9 +684,9 @@ resultMap – 是最复杂也是最强大的元素，用来描述
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2015/09/18/20150918-MyBatis XML 配置文件 environments 元素/#comments" itemprop="discussionUrl">
+                <a href="/2015/12/13/20151213-Thread 同步问题示例/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2015/09/18/20150918-MyBatis XML 配置文件 environments 元素/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/12/13/20151213-Thread 同步问题示例/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -712,7 +708,7 @@ resultMap – 是最复杂也是最强大的元素，用来描述
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,436
+                  783
                 </span>
               
 
@@ -728,7 +724,7 @@ resultMap – 是最复杂也是最强大的元素，用来描述
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  4
                 </span>
               
             </div>
@@ -751,11 +747,14 @@ resultMap – 是最复杂也是最强大的元素，用来描述
       
         
           
-          12345678910111213141516171819&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;&lt;!DOCTYPE configuration        PUBLIC &quot;-//mybati
+          在 Thread 线程安全问题 博文中已经阐述了，线程安全问题的原因以及使用 synchronized 关键字保证线程安全的方法，本文再讲述一种利用锁对象的方式保证线程安全。
+方法内变量不存在同步问题示例
+公共类：
+123456789101112131415161718192021222324252
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2015/09/18/20150918-MyBatis XML 配置文件 environments 元素/#more" rel="contents">
+            <a class="btn" href="/2015/12/13/20151213-Thread 同步问题示例/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -797,7 +796,7 @@ resultMap – 是最复杂也是最强大的元素，用来描述
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/65/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/65/">65</a><span class="page-number current">66</span><a class="page-number" href="/page/67/">67</a><span class="space">&hellip;</span><a class="page-number" href="/page/73/">73</a><a class="extend next" rel="next" href="/page/67/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/65/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/65/">65</a><span class="page-number current">66</span><a class="page-number" href="/page/67/">67</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/67/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -843,7 +842,7 @@ resultMap – 是最复杂也是最强大的元素，用来描述
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">218</span>
+                  <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -854,7 +853,7 @@ resultMap – 是最复杂也是最强大的元素，用来描述
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -865,7 +864,7 @@ resultMap – 是最复杂也是最强大的元素，用来描述
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -916,7 +915,7 @@ resultMap – 是最复杂也是最强大的元素，用来描述
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">148.5k</span>
+    <span title="Site words total count">154.7k</span>
   
 </div>
 
