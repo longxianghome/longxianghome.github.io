@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="在本地用户目录创建 dubbo-loacl.properties 文件，并且在文件内配置如下信息： ···dubbo.registry=N/A  com.xxxxxx.facade.XxxxxxFacade=dubbo://localhost:20812···将需要走本地的服务按如上格式进行配置，左侧是 Facade 接口的包路径 在服务提供者中配置如下启动参数 ···-Ddubbo.proper">
+<meta name="description" content="在本地用户目录创建 dubbo-loacl.properties 文件，并且在文件内配置如下信息： 123456&amp;lt;!--注册中心变量 --&amp;gt;dubbo.registry=N/A     &amp;lt;!--以下是你们DubboServer.xml中配置的需要Export Service，这里我建议你有几个要Export Service都配置在这里，后面是请求本地的地址地址格式：dubbo:/">
 <meta name="keywords" content="开发技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dubbo 本地调试指南">
 <meta property="og:url" content="http://longxianghome.com/2019/06/29/20190629-Dubbo 本地调试指南/index.html">
 <meta property="og:site_name" content="记录 总结 思考 成长">
-<meta property="og:description" content="在本地用户目录创建 dubbo-loacl.properties 文件，并且在文件内配置如下信息： ···dubbo.registry=N/A  com.xxxxxx.facade.XxxxxxFacade=dubbo://localhost:20812···将需要走本地的服务按如上格式进行配置，左侧是 Facade 接口的包路径 在服务提供者中配置如下启动参数 ···-Ddubbo.proper">
+<meta property="og:description" content="在本地用户目录创建 dubbo-loacl.properties 文件，并且在文件内配置如下信息： 123456&amp;lt;!--注册中心变量 --&amp;gt;dubbo.registry=N/A     &amp;lt;!--以下是你们DubboServer.xml中配置的需要Export Service，这里我建议你有几个要Export Service都配置在这里，后面是请求本地的地址地址格式：dubbo:/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-29T00:53:32.181Z">
+<meta property="og:updated_time" content="2019-06-29T01:18:30.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dubbo 本地调试指南">
-<meta name="twitter:description" content="在本地用户目录创建 dubbo-loacl.properties 文件，并且在文件内配置如下信息： ···dubbo.registry=N/A  com.xxxxxx.facade.XxxxxxFacade=dubbo://localhost:20812···将需要走本地的服务按如上格式进行配置，左侧是 Facade 接口的包路径 在服务提供者中配置如下启动参数 ···-Ddubbo.proper">
+<meta name="twitter:description" content="在本地用户目录创建 dubbo-loacl.properties 文件，并且在文件内配置如下信息： 123456&amp;lt;!--注册中心变量 --&amp;gt;dubbo.registry=N/A     &amp;lt;!--以下是你们DubboServer.xml中配置的需要Export Service，这里我建议你有几个要Export Service都配置在这里，后面是请求本地的地址地址格式：dubbo:/">
 
 
 
@@ -328,7 +328,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  159
+                  244
                 </span>
               
 
@@ -366,15 +366,13 @@
 
       
         <p>在本地用户目录创建 dubbo-loacl.properties 文件，并且在文件内配置如下信息：</p>
-<p>···<br><!--注册中心变量 --><br>dubbo.registry=N/A</p>
-<!--以下是你们DubboServer.xml中配置的需要Export Service，这里我建议你有几个要Export Service都配置在这里，后面是请求本地的地址
-地址格式：dubbo://ip:port，这里需要注意的是，需要修改为自己dubbo服务的端口 -->
-<p>com.xxxxxx.facade.XxxxxxFacade=dubbo://localhost:20812<br>···<br>将需要走本地的服务按如上格式进行配置，左侧是 Facade 接口的包路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--注册中心变量 --&gt;</span><br><span class="line">dubbo.registry=N/A</span><br><span class="line">     </span><br><span class="line">&lt;!--以下是你们DubboServer.xml中配置的需要Export Service，这里我建议你有几个要Export Service都配置在这里，后面是请求本地的地址</span><br><span class="line">地址格式：dubbo://ip:port，这里需要注意的是，需要修改为自己dubbo服务的端口 --&gt;</span><br><span class="line">com.xxxxxx.facade.XxxxxxFacade=dubbo://localhost:20812</span><br></pre></td></tr></table></figure>
+<p>将需要走本地的服务按如上格式进行配置，左侧是 Facade 接口的包路径</p>
 <p>在服务提供者中配置如下启动参数</p>
-<p>···<br>-Ddubbo.properties.file=/Users/longxiang/dubbo-local.properties<br>-Ddubbo.protocol.port=20812<br>···</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-Ddubbo.properties.file=/Users/longxiang/dubbo-local.properties</span><br><span class="line">-Ddubbo.protocol.port=20812</span><br></pre></td></tr></table></figure>
 <p>通过启动参数指定 dubbo.properties.file 位置，dubbo 的 port </p>
 <p>在服务消费者中配置如下启动参数</p>
-<p>···<br>-Ddubbo.resolve.file=/Users/longxiang/dubbo-local.properties<br>···</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Ddubbo.resolve.file=/Users/longxiang/dubbo-local.properties</span><br></pre></td></tr></table></figure>
 <p>通过启动参数指定 dubbo.properties.files 位置</p>
 <p>通过如上操作，使指定 Facade 走本地服务</p>
 
@@ -407,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/08/20180808-Spring Security PasswordEncoder 源码阅读/" rel="next" title="Spring Security PasswordEncoder 源码阅读">
-                <i class="fa fa-chevron-left"></i> Spring Security PasswordEncoder 源码阅读
+              <a href="/2019/06/27/20190627-HashMap 长度的秘密/" rel="next" title="HashMap 长度的秘密">
+                <i class="fa fa-chevron-left"></i> HashMap 长度的秘密
               </a>
             
           </div>
@@ -493,7 +491,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">231</span>
+                  <span class="site-state-item-count">232</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -566,7 +564,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">156.0k</span>
+    <span title="Site words total count">157.1k</span>
   
 </div>
 
